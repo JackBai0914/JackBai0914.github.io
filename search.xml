@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[CR635B]]></title>
     <url>%2F2020-04-16-CR635B.html</url>
-    <content type="text"><![CDATA[题目大意Given $n_r$ red stones, $n_g$ green stone, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 + (w_g - w_b)^2 + (w_b - w_r)^2$ is minimized. 算法定位 (generally speaking) Functional Optimization task Brutal Force Improvement (wrong) Greedy 解法Feature 1 : If $w_r$ and $w_g$ are fixed, we can find optimal $w_b$ in $O(log_n)$ time. (Not useful in the standard solution) Feature 2: Since the order of r, g, b has only six circumstances, we can enumerate them. Feature 3: Suppose $w_r \leq w_g \leq w_b$, with fixed w_r, the smallest $w_b$ must be the optimal one, because $w_b$ always contribute to the answer positively. $\therefore$ We enumerate the order, enumerate the small weight, find the least middle weight, and find the least large weight. 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;cmath&gt;#include &lt;cstdlib&gt;#include &lt;ctime&gt;using namespace std;typedef long long ll;int r, g, b;ll rl[1000010];ll gl[1000010];ll bl[1000010];ll fans = 0;ll sqr (ll x) &#123;return x * x;&#125;ll calc (ll a, ll b, ll c) &#123;return sqr(a - b) + sqr(b - c) + sqr(c - a);&#125;void solve (int r, int g, int b, ll *rl, ll *gl, ll *bl) &#123; int ptg = 1, ptb = 1; for (int i = 1; i &lt;= r; i ++) &#123; while (ptb &lt; b &amp;&amp; bl[ptb] &lt; rl[i]) ptb ++; ll mid = (rl[i] + bl[ptb]) &gt;&gt; 1; while (ptg &lt; g &amp;&amp; abs (gl[ptg] - mid) &gt;= abs (gl[ptg + 1] - mid)) ptg ++; fans = min (fans, calc (rl[i], gl[ptg], bl[ptb])); &#125;&#125;int main() &#123; ios::sync_with_stdio(false); int t; cin &gt;&gt; t; while (t -- ) &#123; fans = 1ll&lt;&lt;62; cin &gt;&gt; r &gt;&gt; g &gt;&gt; b; for (int i = 1; i &lt;= r; i ++) cin &gt;&gt; rl[i]; for (int i = 1; i &lt;= g; i ++) cin &gt;&gt; gl[i]; for (int i = 1; i &lt;= b; i ++) cin &gt;&gt; bl[i]; sort (rl + 1, rl + r + 1); sort (gl + 1, gl + g + 1); sort (bl + 1, bl + b + 1); solve (r, g, b, rl, gl, bl); solve (r, b, g, rl, bl, gl); solve (g, r, b, gl, rl, bl); solve (g, b, r, gl, bl, rl); solve (b, g, r, bl, gl, rl); solve (b, r, g, bl, rl, gl); cout &lt;&lt; fans &lt;&lt; endl; &#125; return 0;&#125; 解题收获这道题给你最大的收获，就是常数个变量的大小关系可以$O(C!)$枚举，尤其是在大小关系确定以后可以简化解法(specifically，出现了新的单调性质)的时候。 这样存在着显然的枚举方法的最优化题目，一般都是要找到一些在枚举中存在的贪心性质(m越接近s和l的中点答案越优，l越小答案越优)和单调性质，然后简化枚举。在更难的题目中，有些贪心和单调性只在特定的枚举顺序中才存在。 这道题你考场上FST了…单调性不能乱猜，你在探索算法，而不是在浑水摸鱼。]]></content>
+    <content type="text"><![CDATA[题目大意Given $n_r$ red stones, $n_g$ green stones, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 + (w_g - w_b)^2 + (w_b - w_r)^2$ is minimized. 算法定位 (generally speaking) Functional Optimization task Brutal Force Improvement (wrong) Greedy 解法Feature 1 : If $w_r$ and $w_g$ are fixed, we can find optimal $w_b$ in $O(log_n)$ time. (Not useful in the standard solution) Feature 2: Since the order of r, g, b has only six circumstances, we can enumerate them. Feature 3: Suppose $w_r \leq w_g \leq w_b$, with fixed w_r, the smallest $w_b$ must be the optimal one, because $w_b$ always contribute to the answer positively. $\therefore$ We enumerate the order, enumerate the small weight, find the least middle weight, and find the least large weight. 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;cmath&gt;#include &lt;cstdlib&gt;#include &lt;ctime&gt;using namespace std;typedef long long ll;int r, g, b;ll rl[1000010];ll gl[1000010];ll bl[1000010];ll fans = 0;ll sqr (ll x) &#123;return x * x;&#125;ll calc (ll a, ll b, ll c) &#123;return sqr(a - b) + sqr(b - c) + sqr(c - a);&#125;void solve (int r, int g, int b, ll *rl, ll *gl, ll *bl) &#123; int ptg = 1, ptb = 1; for (int i = 1; i &lt;= r; i ++) &#123; while (ptb &lt; b &amp;&amp; bl[ptb] &lt; rl[i]) ptb ++; ll mid = (rl[i] + bl[ptb]) &gt;&gt; 1; while (ptg &lt; g &amp;&amp; abs (gl[ptg] - mid) &gt;= abs (gl[ptg + 1] - mid)) ptg ++; fans = min (fans, calc (rl[i], gl[ptg], bl[ptb])); &#125;&#125;int main() &#123; ios::sync_with_stdio(false); int t; cin &gt;&gt; t; while (t -- ) &#123; fans = 1ll&lt;&lt;62; cin &gt;&gt; r &gt;&gt; g &gt;&gt; b; for (int i = 1; i &lt;= r; i ++) cin &gt;&gt; rl[i]; for (int i = 1; i &lt;= g; i ++) cin &gt;&gt; gl[i]; for (int i = 1; i &lt;= b; i ++) cin &gt;&gt; bl[i]; sort (rl + 1, rl + r + 1); sort (gl + 1, gl + g + 1); sort (bl + 1, bl + b + 1); solve (r, g, b, rl, gl, bl); solve (r, b, g, rl, bl, gl); solve (g, r, b, gl, rl, bl); solve (g, b, r, gl, bl, rl); solve (b, g, r, bl, gl, rl); solve (b, r, g, bl, rl, gl); cout &lt;&lt; fans &lt;&lt; endl; &#125; return 0;&#125; 解题收获这道题给你最大的收获，就是常数个变量的大小关系可以$O(C!)$枚举，尤其是在大小关系确定以后可以简化解法(specifically，出现了新的单调性质)的时候。 这样存在着显然的枚举方法的最优化题目，一般都是要找到一些在枚举中存在的贪心性质(m越接近s和l的中点答案越优，l越小答案越优)和单调性质，然后简化枚举。在更难的题目中，有些贪心和单调性只在特定的枚举顺序中才存在。 这道题你考场上FST了…单调性不能乱猜，你在探索算法，而不是在浑水摸鱼。]]></content>
       <categories>
         <category>Algorithms</category>
         <category>Optimization</category>
@@ -13,8 +13,8 @@
         <tag>CS</tag>
         <tag>Algorithm</tag>
         <tag>Problem_Report</tag>
-        <tag>Optimization</tag>
         <tag>Greedy</tag>
+        <tag>Optimization</tag>
         <tag>Monotonicity</tag>
       </tags>
   </entry>
@@ -31,9 +31,9 @@
         <tag>CS</tag>
         <tag>Algorithm</tag>
         <tag>Problem_Report</tag>
-        <tag>Optimization</tag>
-        <tag>Greedy</tag>
         <tag>Tree</tag>
+        <tag>Greedy</tag>
+        <tag>Optimization</tag>
       </tags>
   </entry>
   <entry>
