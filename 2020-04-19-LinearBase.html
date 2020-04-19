@@ -94,13 +94,21 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bai&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Codeforces/index.html">
+  <meta name="description" content="线性基是向量空间的一组基，常用来解决子集异或一类题目的算法。">
+<meta name="keywords" content="CS,Algorithms,LinearBase,ALgorithm Summaries">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性基算法整理">
+<meta property="og:url" content="http://yoursite.com/2020-04-19-LinearBase.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
+<meta property="og:description" content="线性基是向量空间的一组基，常用来解决子集异或一类题目的算法。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="file:///Users/jackbai/Desktop/OI2020/LB1.jpeg">
+<meta property="og:image" content="file:///Users/jackbai/Desktop/OI2020/LB2.jpeg">
+<meta property="og:updated_time" content="2020-04-19T07:47:39.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bai&#39;s Blog">
+<meta name="twitter:title" content="线性基算法整理">
+<meta name="twitter:description" content="线性基是向量空间的一组基，常用来解决子集异或一类题目的算法。">
+<meta name="twitter:image" content="file:///Users/jackbai/Desktop/OI2020/LB1.jpeg">
 
 
 
@@ -108,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/Codeforces/">
+  <link rel="canonical" href="http://yoursite.com/2020-04-19-LinearBase">
 
 
 
@@ -119,7 +127,7 @@
 </script>
 
   
-  <title>标签: Codeforces | Bai's Blog</title>
+  <title>线性基算法整理 | Bai's Blog</title>
   
 
 
@@ -174,7 +182,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -232,7 +240,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -351,109 +359,234 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Codeforces<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-04-19-LinearBase.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Bai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2020-04-12-CFRecording.html" itemprop="url">
-            
-              <span itemprop="name">Codeforces Diary</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">线性基算法整理
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-04-12T21:55:29+08:00" content="2020-04-12">
-          04-12
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-19 15:08:41" itemprop="dateCreated datePublished" datetime="2020-04-19T15:08:41+08:00">2020-04-19</time>
+            </span>
+          
+
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/" itemprop="url" rel="index"><span itemprop="name">Algorithms</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/LinearBase/" itemprop="url" rel="index"><span itemprop="name">LinearBase</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019-08-03-Codeforces-CR576.html" itemprop="url">
-            
-              <span itemprop="name">[Codeforces]CR576 比赛记录</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-03T13:47:44+08:00" content="2019-08-03">
-          08-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>线性基是向量空间的一组基，常用来解决<strong>子集异或</strong>一类题目的算法。</p>
+<a id="more"></a>
+<h3 id="线性基的定义"><a href="#线性基的定义" class="headerlink" title="线性基的定义"></a>线性基的定义</h3><h4 id="异或和"><a href="#异或和" class="headerlink" title="异或和"></a>异或和</h4><p>设S为无符号整数集，定义其异或和 xor-sum(S) = $S_1 xor S_2 … xor S_{|S|}$</p>
+<h4 id="张成"><a href="#张成" class="headerlink" title="张成"></a>张成</h4><p>设集合$T \subseteq S$，所有这样的子集$T$的异或和组成的集合称为集合$S$的<strong>张成</strong>，记作 $span(S)$。即，在$S$中选出任意多个数，其异或和的所有可能的结果组成的集合。</p>
+<h4 id="线性相关"><a href="#线性相关" class="headerlink" title="线性相关"></a>线性相关</h4><p>对于一个集合$S$，如果存在$S_j$使$span(S) == span(S$  $S_j)$，则称S线性相关。</p>
+<h4 id="线性基"><a href="#线性基" class="headerlink" title="线性基"></a>线性基</h4><p>我们称集合$B$是$S$的线性基，当且仅当：</p>
+<ul>
+<li>$S \subseteq span(B)$</li>
+<li>B是线性无关的</li>
+</ul>
+<p>$|B|$称为线性基的长度。</p>
+<h3 id="线性基的构造方法"><a href="#线性基的构造方法" class="headerlink" title="线性基的构造方法"></a>线性基的构造方法</h3><h4 id="构造一个普通的线性基"><a href="#构造一个普通的线性基" class="headerlink" title="构造一个普通的线性基"></a>构造一个普通的线性基</h4><p>已知集合S，其中每个元素均小于$2^m$。不失一般性的，对于每一个二进制位i，我们假设有B中有至多一个元素与其对应，我们称其为$b_i$。初始状态下，$b_i=0$，$\forall i \in [0, m)$。</p>
+<p>每加入一个元素$x$，将其从大到小遍历每个二进制位：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = m - <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; x; i --)</span><br><span class="line">			<span class="keyword">if</span> (x &gt;&gt; i &amp; <span class="number">1</span>)</span><br><span class="line">				<span class="keyword">if</span> (!b[i])	&#123;b[i] = x; <span class="keyword">break</span>;&#125;</span><br><span class="line">				<span class="keyword">else</span>				x ^= b[i];</span><br><span class="line"><span class="comment">// "&gt;&gt;" will be processed prior to '&amp;'</span></span><br></pre></td></tr></table></figure>
+<h4 id="构造一个有特殊性质的线性基"><a href="#构造一个有特殊性质的线性基" class="headerlink" title="构造一个有特殊性质的线性基"></a>构造一个有特殊性质的线性基</h4><p>易知，一个集合S可以有很多组等价的线性基。这促使我们思考，我们可否让构造出的线性基拥有更好的结构。</p>
+<p>我们用类似高斯消元的方法，可以让线性基的关键位(有B中元素对应的位)只有一个元素为1.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = m - <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; x; i --)</span><br><span class="line">			<span class="keyword">if</span> (x &gt;&gt; i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!b[i]) &#123;</span><br><span class="line">					b[i] = x;</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j --)	<span class="keyword">if</span> (b[i] &gt;&gt; j &amp; <span class="number">1</span>)	b[i] ^= b[j];</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j = m - <span class="number">1</span>; j &gt; i; j --)	<span class="keyword">if</span> (b[j] &gt;&gt; i &amp; <span class="number">1</span>)	b[j] ^= b[i];</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					x ^= b[i];</span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//ATTENTION: those two "for" must not be switched</span></span><br></pre></td></tr></table></figure>
+<p>如果线性基的长度为m，那么写成矩阵的话，这个线性基就是对角矩阵$D_m$。</p>
+<p>一般来说，我们都会构造有特殊性质的线性基。</p>
+<h4 id="线性基的合并"><a href="#线性基的合并" class="headerlink" title="线性基的合并"></a>线性基的合并</h4><p>合并只需要将一个线性基中的所有元素插入到另一个线性基中即可，时间复杂度为$O(m^2)$。</p>
+<h3 id="补充资料"><a href="#补充资料" class="headerlink" title="补充资料"></a>补充资料</h3><p><img src="file:///Users/jackbai/Desktop/OI2020/LB1.jpeg" alt="两年前的笔记1"><br><img src="file:///Users/jackbai/Desktop/OI2020/LB2.jpeg" alt="两年前的笔记2"></p>
 
       
     </div>
 
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/CS/" rel="tag"><i class="fa fa-tag"></i> CS</a>
+          
+            <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
+          
+            <a href="/tags/LinearBase/" rel="tag"><i class="fa fa-tag"></i> LinearBase</a>
+          
+            <a href="/tags/ALgorithm-Summaries/" rel="tag"><i class="fa fa-tag"></i> ALgorithm Summaries</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020-04-19-CR635E.html" rel="next" title="CR635E解题报告">
+                <i class="fa fa-chevron-left"></i> CR635E解题报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -473,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -657,6 +799,23 @@
       
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性基的定义"><span class="nav-number">1.</span> <span class="nav-text">线性基的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异或和"><span class="nav-number">1.1.</span> <span class="nav-text">异或和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#张成"><span class="nav-number">1.2.</span> <span class="nav-text">张成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性相关"><span class="nav-number">1.3.</span> <span class="nav-text">线性相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性基"><span class="nav-number">1.4.</span> <span class="nav-text">线性基</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性基的构造方法"><span class="nav-number">2.</span> <span class="nav-text">线性基的构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造一个普通的线性基"><span class="nav-number">2.1.</span> <span class="nav-text">构造一个普通的线性基</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造一个有特殊性质的线性基"><span class="nav-number">2.2.</span> <span class="nav-text">构造一个有特殊性质的线性基</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性基的合并"><span class="nav-number">2.3.</span> <span class="nav-text">线性基的合并</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充资料"><span class="nav-number">3.</span> <span class="nav-text">补充资料</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -805,6 +964,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -822,6 +985,53 @@
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
 
 
 
@@ -832,6 +1042,8 @@
 
 
 
+
+  
 
 
 

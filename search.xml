@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[线性基算法整理]]></title>
+    <url>%2F2020-04-19-LinearBase.html</url>
+    <content type="text"><![CDATA[线性基是向量空间的一组基，常用来解决子集异或一类题目的算法。 线性基的定义异或和设S为无符号整数集，定义其异或和 xor-sum(S) = $S_1 xor S_2 … xor S_{|S|}$ 张成设集合$T \subseteq S$，所有这样的子集$T$的异或和组成的集合称为集合$S$的张成，记作 $span(S)$。即，在$S$中选出任意多个数，其异或和的所有可能的结果组成的集合。 线性相关对于一个集合$S$，如果存在$S_j$使$span(S) == span(S$ $S_j)$，则称S线性相关。 线性基我们称集合$B$是$S$的线性基，当且仅当： $S \subseteq span(B)$ B是线性无关的 $|B|$称为线性基的长度。 线性基的构造方法构造一个普通的线性基已知集合S，其中每个元素均小于$2^m$。不失一般性的，对于每一个二进制位i，我们假设有B中有至多一个元素与其对应，我们称其为$b_i$。初始状态下，$b_i=0$，$\forall i \in [0, m)$。 每加入一个元素$x$，将其从大到小遍历每个二进制位： 12345for (int i = m - 1; i &gt;= 0 &amp;&amp; x; i --) if (x &gt;&gt; i &amp; 1) if (!b[i]) &#123;b[i] = x; break;&#125; else x ^= b[i];// "&gt;&gt;" will be processed prior to '&amp;' 构造一个有特殊性质的线性基易知，一个集合S可以有很多组等价的线性基。这促使我们思考，我们可否让构造出的线性基拥有更好的结构。 我们用类似高斯消元的方法，可以让线性基的关键位(有B中元素对应的位)只有一个元素为1. 123456789101112for (int i = m - 1; i &gt;= 0 &amp;&amp; x; i --) if (x &gt;&gt; i &amp; 1) &#123; if (!b[i]) &#123; b[i] = x; for (int j = i - 1; j &gt;= 0; j --) if (b[i] &gt;&gt; j &amp; 1) b[i] ^= b[j]; for (int j = m - 1; j &gt; i; j --) if (b[j] &gt;&gt; i &amp; 1) b[j] ^= b[i]; return ; &#125; else x ^= b[i]; &#125;//ATTENTION: those two "for" must not be switched 如果线性基的长度为m，那么写成矩阵的话，这个线性基就是对角矩阵$D_m$。 一般来说，我们都会构造有特殊性质的线性基。 线性基的合并合并只需要将一个线性基中的所有元素插入到另一个线性基中即可，时间复杂度为$O(m^2)$。 补充资料]]></content>
+      <categories>
+        <category>Algorithms</category>
+        <category>LinearBase</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>LinearBase</tag>
+        <tag>ALgorithm Summaries</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CR635E解题报告]]></title>
     <url>%2F2020-04-19-CR635E.html</url>
     <content type="text"><![CDATA[题目大意Given $n$ numbers belonging to $[0, 2^m)$. For each $i \in [0, m]$, compute the number of ways to pick numbers, such that their xor sum has $i$ 1-bits in the binary representation (i.e., $popcount(xor_sum) = i$). Modulo the answer by 998244353. 算法定位 异或线性基 状压DP 神奇的状压DP优化方法 解法代码12 解题收获]]></content>
@@ -10,10 +25,10 @@
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>Algorithm</tag>
-        <tag>Problem_Report</tag>
+        <tag>Algorithms</tag>
+        <tag>DP</tag>
+        <tag>Problem_Reports</tag>
         <tag>LinearBase</tag>
-        <tag>Dynamic Programming</tag>
         <tag>MeetinMiddle</tag>
       </tags>
   </entry>
@@ -28,8 +43,8 @@
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>Algorithm</tag>
-        <tag>Problem_Report</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
         <tag>Construction</tag>
         <tag>交互题</tag>
         <tag>增量法</tag>
@@ -43,7 +58,7 @@
         <category>Oxford</category>
       </categories>
       <tags>
-        <tag>CS</tag>
+        <tag>Oxford</tag>
       </tags>
   </entry>
   <entry>
@@ -57,8 +72,8 @@
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>Algorithm</tag>
-        <tag>Problem_Report</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
         <tag>DP</tag>
         <tag>Dimension-Eliminatating Tricks</tag>
       </tags>
@@ -74,10 +89,10 @@
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>Algorithm</tag>
-        <tag>Problem_Report</tag>
-        <tag>Optimization</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
         <tag>Greedy</tag>
+        <tag>Optimization</tag>
         <tag>Monotonicity</tag>
       </tags>
   </entry>
@@ -92,11 +107,11 @@
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>Algorithm</tag>
-        <tag>Problem_Report</tag>
-        <tag>Optimization</tag>
-        <tag>Greedy</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
         <tag>Tree</tag>
+        <tag>Greedy</tag>
+        <tag>Optimization</tag>
       </tags>
   </entry>
   <entry>
