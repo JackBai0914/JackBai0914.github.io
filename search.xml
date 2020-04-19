@@ -132,11 +132,8 @@
     <url>%2F2020-02-09-%E5%8D%9A%E5%AE%A2%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html</url>
     <content type="text"><![CDATA[启用博客啦！记录一些操作的步骤，以免以后忘记。 1.域名相关域名从阿里云平台购买。需登录阿里云平台进行续费和解析等操作。 域名解析我在阿里云上注册了域名：simulated-anneal.info，我想将其解析到我在github上的主页：jackbai0914.github.io。 将域名解析到http://jackbai.github.io上，需要添加两条解析： 先添加一个CNAME记录类型，主机记录写@，后面记录值写上http://jackbai0914.github.io 再添加一个CNAME记录类型，主机记录写www，后面记录值也是http://jackbai0914.github.io 这样别人用www和不用www都能访问网站（其实www的方式，会先解析成http://jackbai0914.github.io，然后根据CNAME再变成[simulated-anneal.info](simulated-anneal.info)，即中间经过一次转换）。 A记录是直接解析到空间IP地址；CNAME是解析到别名；MX是电子邮件系统发邮件时根据收信人的地址后缀来定位邮件服务器，是设置企业邮箱的;NS是指DNS,用默认的就行,一般不用修改；TXT一般指为某个主机名或域名设置的说明，是企业邮箱的辅助设置。 然后还需在github的库中进行一步操作： 在master分支下创建名为“CNAME”的文件。 将内容编辑为“simulated-anneal.info”，即想要绑定的域名。 在settings中，将Custom domain改为simulated-anneal.info。 这一步将github的主页重定向到了simulated-anneal.info上。但是博主目前还不理解这一步的目的…. 2.hexo常用命令在终端中用hexo命令，可以进行本地编辑博客，生成静态网页，部署博客到github上等操作。 1234567891011121314hexo new post &lt;title&gt; #新建名为&lt;title&gt;的文章，存储在source/_posts中hexo new page &lt;title&gt; #新建名为&lt;title&gt;的网页，存储在source中hexo new draft &lt;title&gt; #新建草稿，存储在source/_drafts中hexo new draft &lt;title&gt; #新建草稿，存储在source/_drafts中hexo publish [layout] &lt;title&gt; #将文件移到source/_posts中hexo generate #生成静态网页hexo generate --watch #监视文件变动hexo deploy #部署网页至github上hexo server #启动网页预览hexo server -p 2333 #将预览端口改为2333hexo clean #清除缓存，网页正常情况下可以忽略此条命令。执行该指令后。会删掉站点根目录下的public文件夹。明白了吧，public即存储生成的静态网页。hexo deploy --generate #在生成完毕后自动部署网站 3.本地存储结构 sources：修改文章和博客结构的地方。 themes：存储博客外观主题的地方。 NexT/_config.yml：外观主题的settings。 scaffolds：文章模版库。 public：存储生成的静态网页的地方，一般不要修改。 _config.yml：博客settings。]]></content>
       <categories>
-        <category>Blog</category>
+        <category>其他</category>
       </categories>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[宾夕法尼亚大学 访校印象]]></title>
@@ -181,23 +178,15 @@
     <content type="text"><![CDATA[前置技能：Markdown一、Markdown 是什么Markdown 是一种标记语言。在写作时，你的所有文字都是没有样式的纯文本，在其中插入若干 Markdown 标记后，被标记的文字便有了样式。样式将会在渲染的时候呈现，并且样式的显示效果由 Markdown 工具决定。 比如，在你所写的文字中，你希望某一行的最终排版呈现一级标题的样式，那就给这行文字加个一级标题的标记；某个地方有两个字需要加粗，那就给这两个字加个粗体标记，最终的排版效果中这两字就会是粗体模样。 二、Markdown 的使用方法前面说了，Markdown 其实就是给文章内容作标记，把某处内容标记成什么那它最终就呈现对应的样式，而这些标记是一些简单的符号。 那 Markdown 标记都有哪些，样式效果是怎么的呢？ 常用的标记 1. 二级标题1## 这是二级标题 2. 三级标题1### 这是三级标题 3. 四级标题1#### 这是四级标题 4. 粗体1这是**粗体** 5. 引用1&gt; 这是引用 6. 有序列表1234Markdown 中列表有两种：1. 有序列表，像这样带序号的。其写法是：每项的序号以数字、点、空格组成2. 无序列表，不带序号的，也就是后面那种 7. 无序列表123456无序列表有两种相同效果的写法：* 用 * 和一个空格开头- 用 - 和一个空格开头一个列表中我们应该始终用同一种写法，不用混用 * 和 - 8. 链接1[这是链接文本](https://xx.xx/xx) 9. 插入图片1![任意图片名称](https://picture-gallery.oss-cn-shanghai.aliyuncs.com/markdown/markdown_logo.png) 10. 插入表格1234| 表头1 | 表头2 || --- | --- || 单元格1 | 单元格2 || 单元格3 | 单元格4 | 不常用但可能会用到的标记 1. 代码块1234```pythonprint(&apos;代码块表示多行代码，使用```来开头和结尾代码块&apos;)print(&apos;语言标识可选，若有则可自动高亮代码元素&apos;)``` 2. 行内代码1这是行内代码 `echo 行内代码嵌入在某一行文本中 3. 一级标题1# 这是一级标题 4. 五级标题1##### 这是五级标题 5. 六级标题1###### 这是六级标题 6. 分割线1--- 7. 斜体1这是*斜体* 8. 删除线1这是~~删除线~~ 三、图床之前介绍了 Markdown 插入图片的方式： 1![任意图片名称](https://xx.xx/xx) 这里演示的链接是网络链接，其实也可以使用本地图片的的文件路径，形式如下： 1![任意图片名称](C:\Documents\sample.png) 四、Markdown 标记的典型使用标题 文章的顶层标题使用二级标题 每个小节的标题使用三级标题 小节中进一步分层组织时使用四级标题 尽量少用五级标题和六级标题，考虑用有序列表和无序列表代替 完全不用一级标题 粗体、斜体需要强调某处内容时使用粗体。在中文排版中不使用斜体。在英文排版中可用斜体表达强调，或表示书名、题目。 引用以下情况使用引用标记： 引述内容时（也可直接用引号替代） 作示例时 给出提示、警告等额外说明时 行内代码、代码块1`echo 'Hello World' 图片Markdown 中使用1![图片名称](https://xx.xx/xx) 来插入图片，这里的「图片名称」可以任取，但是推荐使用对图片主题具有描述性的文字。因为在一些网站或软件中，图片无法加载时会显示这个「图片名称」，这时至少还能给读者传递出一点有用信息。 六、结语前面总共介绍了 18 种 Markdown 标记，其实常用的也就 10 种左右，这些标记符号都很简单，不出二十分钟便能全部记住。以后在写作的时候请尽量去使用 Markdown，一方面反复的练习会使你牢牢记住各种标记符号，使用时信手拈来；另一方面，Markdown 的使用会大大方便你写作，减少排版带来的负担。请坚信 Markdown 会为你带来生产力的提升。 学习自知乎，代码之外的自我修养专栏，作者黄浮云]]></content>
       <categories>
         <category>其他</category>
-        <category>其他语言</category>
       </categories>
       <tags>
         <tag>CS</tag>
-        <tag>攻略</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[function testing]]></title>
     <url>%2F2019-07-27-function-testing.html</url>
     <content type="text"><![CDATA[123456789101112131415#include &lt;ctime&gt;#include &lt;cmath&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;int main() &#123; ios::sync_with_stdio(false); string s; s = "Hello World！"; cout &lt;&lt; s &lt;&lt; endl; return 0;&#125;]]></content>
-      <categories>
-        <category>just_for_testing</category>
-      </categories>
-      <tags>
-        <tag>just_for_testing</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
