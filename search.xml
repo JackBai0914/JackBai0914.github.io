@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CR633C]]></title>
+    <url>%2F2020-04-23-CR633C.html</url>
+    <content type="text"><![CDATA[题目大意Consider the infinite sequence $s$ of positive integers, created by repeating the following steps: Find the lexicographically smallest triple of positive integers (a,b,c) such that: $a⊕b⊕c=0$, where $⊕$ denotes the bitwise XOR operation. $a$, $b$, $c$ are not in s. Append $a$, $b$, $c$ to $s$ in this order. Go back to the first step. You have integer $n$. Find the n-th element of $s$. You have to answer $t$ independent test cases. 算法定位 Construction Recursion 解法代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;cstdlib&gt;#include &lt;ctime&gt;#include &lt;cmath&gt;using namespace std;typedef long long ll;ll n, m;ll a, b, c;int main() &#123; ios::sync_with_stdio(false); int t; cin &gt;&gt; t; while (t -- )&#123; cin &gt;&gt; n; m = (n - 1) / 3 + 1; ll len = 1, bef = 0; while (m &gt; len + bef) &#123; bef += len; len *= 4; &#125; ll ord = m - bef - 1; a = len + ord; int r[4] = &#123;0, 2, 3, 1&#125;; ll weight = 1, sum = 0; while (ord) &#123; sum += weight * r[ord % 4]; ord /= 4; weight *= 4; &#125; b = len * 2 + sum; c = a ^ b; if (n % 3 == 1) cout &lt;&lt; a &lt;&lt; '\n'; if (n % 3 == 2) cout &lt;&lt; b &lt;&lt; '\n'; if (n % 3 == 0) cout &lt;&lt; c &lt;&lt; '\n'; &#125; return 0;&#125; 解题收获在考场上，你还算比较聪明：打表，找规律。 当找到规律以后，立刻将规律形式化，并想出最快的实现方法。]]></content>
+      <categories>
+        <category>Algorithms</category>
+        <category>Construction</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+        <tag>Construction</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[线性基算法整理]]></title>
     <url>%2F2020-04-19-LinearBase.html</url>
     <content type="text"><![CDATA[线性基是向量空间的一组基，常用来解决子集异或一类题目的算法。 线性基的定义异或和设S为无符号整数集，定义其异或和 xor-sum(S) = $S_1 xor S_2 … xor S_{|S|}$ 张成设集合$T \subseteq S$，所有这样的子集$T$的异或和组成的集合称为集合$S$的张成，记作 $span(S)$。即，在$S$中选出任意多个数，其异或和的所有可能的结果组成的集合。 线性相关对于一个集合$S$，如果存在$S_j$使$span(S) == span(S$ $S_j)$，则称S线性相关。 线性基我们称集合$B$是$S$的线性基，当且仅当： $S \subseteq span(B)$ B是线性无关的 $|B|$称为线性基的长度。 线性基的构造方法构造一个普通的线性基已知集合S，其中每个元素均小于$2^m$。不失一般性的，对于每一个二进制位i，我们假设有B中有至多一个元素与其对应，我们称其为$b_i$。初始状态下，$b_i=0$，$\forall i \in [0, m)$。 每加入一个元素$x$，将其从大到小遍历每个二进制位： 12345for (int i = m - 1; i &gt;= 0 &amp;&amp; x; i --) if (x &gt;&gt; i &amp; 1) if (!b[i]) &#123;b[i] = x; break;&#125; else x ^= b[i];// "&gt;&gt;" will be processed prior to '&amp;' 构造一个有特殊性质的线性基易知，一个集合S可以有很多组等价的线性基。这促使我们思考，我们可否让构造出的线性基拥有更好的结构。 我们用类似高斯消元的方法，可以让线性基的关键位(有B中元素对应的位)只有一个元素为1. 123456789101112for (int i = m - 1; i &gt;= 0 &amp;&amp; x; i --) if (x &gt;&gt; i &amp; 1) &#123; if (!b[i]) &#123; b[i] = x; for (int j = i - 1; j &gt;= 0; j --) if (b[i] &gt;&gt; j &amp; 1) b[i] ^= b[j]; for (int j = m - 1; j &gt; i; j --) if (b[j] &gt;&gt; i &amp; 1) b[j] ^= b[i]; return ; &#125; else x ^= b[i]; &#125;//ATTENTION: those two "for" must not be switched 如果线性基的长度为m，那么写成矩阵的话，这个线性基就是对角矩阵$D_m$。 一般来说，我们都会构造有特殊性质的线性基。 线性基的合并合并只需要将一个线性基中的所有元素插入到另一个线性基中即可，时间复杂度为$O(m^2)$。 线性基的进阶性质方案数对于集合$S$及其线性基$B$，$\forall v \in span(B)$，异或和为v的方案数为$2^{|S| - |B|}$。 补充资料]]></content>
