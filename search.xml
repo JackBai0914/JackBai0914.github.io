@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[SDSZ Mathematics Certificate Verification]]></title>
+    <title><![CDATA[Certificate Verification]]></title>
     <url>%2F2020-04-28-decoder.html</url>
     <content type="text"><![CDATA[Every cerfificate offered by the SDSZ Mathematics Office has a 11-charachter code that satisfies certain patterns. If you want to check whether or not your certificate is legitimate, download and run the program below. Instruction for running decoder on Mac:Decoder_Mac 123450.Download the program.1.Open the terminal (google if don&apos;t know).2.Go to the &quot;Downloads&quot; folder by typing in command &quot;cd Downloads&quot;.3.Give our computer the permission to run the prorgam by typing in command &quot;chmod +x decoder_Mac&quot;.3.Run the decoder program by typing in the command &quot;./decoder_Mac&quot;. Instruction for running decoder on Windows:Decoder_Windows 120.Download the program.1.Double click to open it.]]></content>
       <categories>
