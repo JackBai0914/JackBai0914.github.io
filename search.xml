@@ -1,9 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ByteCamp_day3_F]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-F.html</url>
+    <content type="text"><![CDATA[题目大意平面内有一个点集和一个矩形。选定矩形内一点，使得矩形绕它旋转后，覆盖过的点数最少 本质信息与套路解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_L]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-L.html</url>
+    <content type="text"><![CDATA[在贫瘠的草原上，寻找花的种子。 题目大意定义biggest_digit(A)为A在10进制下最大的一个位的值。 求A在经过n次 $A:=biggest_digit(A)%m$ 运算之后的值。 本质信息与套路 找规律啊，找一些不变的量啊。 这种题不是枚举玄学优化，就是DP。 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_K]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-K.html</url>
+    <content type="text"><![CDATA[题目大意 本质信息与套路 本题中的限制，可以两两考虑矛盾。也可以只考虑限制点的合法性 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_J]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-J.html</url>
+    <content type="text"><![CDATA[举步维艰。 题目大意 本质信息与套路解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_I]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-I.html</url>
+    <content type="text"><![CDATA[题目大意You are given a track of length L. On it there are N marbles at positions A1, A2 · · · , AN and N switches at positions B1, B2, · · · , BN , both of negligably small size. In the beginning, you direct each marble left or right and they all start moving at the constant speed of 1 in the given direction. When two marbles collide, they bounce off each other elastically, meaning that they continue moving in opposite directions at the same speed. If a marble collides with the beginning or end of the track it bounces off with the same speed in the opposite direction. Keep in mind that it takes exactly one second for a marble at position i to travel to the position i + 1 or i + 1, and it also takes exactly one second to travel from 1 back to 1while changing directions, or to travel from L back to L while changing directions. The goal is to have amarble on top of every switch. You need to find the minimum amount of time needed to achieve this. 本质信息与套路 转化反弹 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_H]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-H.html</url>
+    <content type="text"><![CDATA[看见曙光。 题目大意Given a n*n grid that contains n coins, and the positions of the coins. Calculate the minimum number of moves (moving a coin to a 4-adjacent grid) to make the coins spread on every colomn and every row. 本质信息与套路解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_G]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-G.html</url>
+    <content type="text"><![CDATA[穿越晨雾。 题目大意给定A，不断复制自身得到无限串T。 给定字符串集S。求至少用其中的多少个串，才能拼成B，使得B不断复制自身后得到T。 本质信息与套路 先找出A的最小循环节a，这是我们要拼成的关键信息。 发现“S拼成了几个a”是无用信息。 $S_i$”从a的哪个位置开始，哪个位置结束”是关键信息。因为，这件事唯一决定了它该怎么被用，对答案有什么贡献。 建图求环 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_D]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-D.html</url>
+    <content type="text"><![CDATA[在迷雾中前行。 题目大意在一棵树上，两个人轮流选点。先手目标为让自己选点的直径最小，后手目标为让先手选点的直径最大。求两人都采取最优策略时的答案。 本质信息与套路解法 先手取最后一个 如果有三个点构成直径的话，先手gg 后手取最后一个 如果有四个点构成直径的话，先手gg 代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_C]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-C.html</url>
+    <content type="text"><![CDATA[在迷雾中前行。 题目大意存在数组L，已知数组A满足$A_i = GCD(L_i, L_{i+1})。构造L。 算法定位解法用$A_i$左右的gcd取lcm，得到$A’_i$，可知后者为前者因数，后者满足条件为前者满足条件的充分条件。 代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_B]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-B.html</url>
+    <content type="text"><![CDATA[在迷雾中前行。 题目大意给定一个矩阵，每个元素为图中的一条边。 每次询问一个子矩阵（长宽比不超过3/2），求它构成的MST。 算法定位 MST是可合并的。 用ST表，利用子矩阵长宽的信息 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ByteCamp_day3_A]]></title>
+    <url>%2F2020-05-03-ByteCamp-day3-A.html</url>
+    <content type="text"><![CDATA[在迷雾中前行。 题目大意Given n (1 &lt;= n &lt;= 1000), k (0 &lt;= k &lt;= $\frac{n*(n-1)}{2}$), x (2 &lt;= x &lt;= 1000). Construct an n-element array, satisfying: All elements are smaller than $10^6$ There are exactly k unordered pairs of different indices (i, j) such that $|A_i-A_j| &gt;= x$ 本质信息 可以把数组分成不相干的一些部分，使得部分之间有贡献，部分中无贡献。 套路 增量构造！！！！ 解法代码12 解题收获]]></content>
+      <categories>
+        <category>Algorithms</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Problem Reports</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Certificate Verification]]></title>
     <url>%2F2020-04-28-decoder.html</url>
-    <content type="text"><![CDATA[Every cerfificate offered by the SDSZ Mathematics Office has a 11-charachter code that satisfies certain patterns. If you want to check whether or not your certificate is legitimate, download and run the program below. Instruction for running decoder on Mac:Decoder_Mac 123450.Download the program.1.Open the terminal (google if don&apos;t know).2.Go to the &quot;Downloads&quot; folder by typing in command &quot;cd Downloads&quot;.3.Give our computer the permission to run the prorgam by typing in command &quot;chmod +x decoder_Mac&quot;.3.Run the decoder program by typing in the command &quot;./decoder_Mac&quot;. Instruction for running decoder on Windows:Decoder_Windows 120.Download the program.1.Double click to open it.]]></content>
+    <content type="text"><![CDATA[Every cerfificate offered by the SDSZ Mathematics Office has an unique code that satisfies certain cryptographical patterns. If you want to check whether or not your certificate is legitimate, download the program below and type in the code. Instruction for running decoder on Mac:Decoder_Mac 123450.Download the program.1.Open the terminal (google if confused).2.Go to the &quot;Downloads&quot; folder by typing in command &quot;cd Downloads&quot;.3.Give computer the permission to run decoder by typing in command &quot;chmod +x decoder_Mac&quot;.4.Run the decoder program by typing in command &quot;./decoder_Mac&quot;. Instruction for running decoder on Windows:Decoder_Windows 120.Download the program.1.Double click to run it.]]></content>
       <categories>
         <category>其他</category>
       </categories>
@@ -115,8 +258,8 @@
         <tag>CS</tag>
         <tag>Algorithms</tag>
         <tag>Problem Reports</tag>
-        <tag>Greedy</tag>
         <tag>Optimization</tag>
+        <tag>Greedy</tag>
         <tag>Monotonicity</tag>
       </tags>
   </entry>
@@ -133,9 +276,9 @@
         <tag>CS</tag>
         <tag>Algorithms</tag>
         <tag>Problem Reports</tag>
-        <tag>Tree</tag>
-        <tag>Greedy</tag>
         <tag>Optimization</tag>
+        <tag>Greedy</tag>
+        <tag>Tree</tag>
       </tags>
   </entry>
   <entry>
