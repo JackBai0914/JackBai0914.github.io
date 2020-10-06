@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="题目大意Given $n_r$ red stones, $n_g$ green stones, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 +">
-<meta name="keywords" content="CS,Algorithms,Problem Reports,Greedy,Optimization,Monotonicity">
+  <meta name="description" content="Format of scanf and printf">
+<meta name="keywords" content="CS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CR635B解题报告">
-<meta property="og:url" content="http://yoursite.com/2020-04-16-CR635B.html">
+<meta property="og:title" content="Scanf&amp;Printf用法梳理">
+<meta property="og:url" content="http://yoursite.com/2020-10-06-C-IO.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
-<meta property="og:description" content="题目大意Given $n_r$ red stones, $n_g$ green stones, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 +">
+<meta property="og:description" content="Format of scanf and printf">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-19T07:10:26.459Z">
+<meta property="og:updated_time" content="2020-10-06T15:17:31.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CR635B解题报告">
-<meta name="twitter:description" content="题目大意Given $n_r$ red stones, $n_g$ green stones, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 +">
+<meta name="twitter:title" content="Scanf&amp;Printf用法梳理">
+<meta name="twitter:description" content="Format of scanf and printf">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020-04-16-CR635B">
+  <link rel="canonical" href="http://yoursite.com/2020-10-06-C-IO">
 
 
 
@@ -124,7 +124,7 @@
 </script>
 
   
-  <title>CR635B解题报告 | Bai's Blog</title>
+  <title>Scanf&Printf用法梳理 | Bai's Blog</title>
   
 
 
@@ -393,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-04-16-CR635B.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-10-06-C-IO.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Bai">
@@ -410,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CR635B解题报告
+          <h1 class="post-title" itemprop="name headline">Scanf&Printf用法梳理
 
               
             
@@ -436,7 +436,7 @@
                 
               
 
-              <time title="创建时间：2020-04-16 10:48:43" itemprop="dateCreated datePublished" datetime="2020-04-16T10:48:43+08:00">2020-04-16</time>
+              <time title="创建时间：2020-10-06 21:11:50" itemprop="dateCreated datePublished" datetime="2020-10-06T21:11:50+08:00">2020-10-06</time>
             </span>
           
 
@@ -451,21 +451,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/" itemprop="url" rel="index"><span itemprop="name">Algorithms</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/Optimization/" itemprop="url" rel="index"><span itemprop="name">Optimization</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/Optimization/Greedy/" itemprop="url" rel="index"><span itemprop="name">Greedy</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 
                 
                 
@@ -505,21 +491,212 @@
       
 
       
-        <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>Given $n_r$ red stones, $n_g$ green stones, and $n_b$ blue stones, each of which has a weight ($1 \leq w \leq 10^9$). Find a red stone, a green stone, and a blue stone, such that $(w_r - w_g)^2 + (w_g - w_b)^2 + (w_b - w_r)^2$ is minimized.</p>
+        <p>Format of scanf and printf</p>
 <a id="more"></a>
-<h3 id="算法定位"><a href="#算法定位" class="headerlink" title="算法定位"></a>算法定位</h3><ul>
-<li>(generally speaking) Functional Optimization task</li>
-<li>Brutal Force Improvement (wrong)</li>
-<li><strong>Greedy</strong></li>
+<p><code>%[flags][width][.precision][length]specifier</code>‘</p>
+<h3 id="Specifier"><a href="#Specifier" class="headerlink" title="Specifier"></a>Specifier</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">specifier</th>
+<th style="text-align:center">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">d/i</td>
+<td style="text-align:center">32bits integer</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">32bits unsigned integer</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">float (single-precision)</td>
+</tr>
+<tr>
+<td style="text-align:center">lf</td>
+<td style="text-align:center">double (double-precision)</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">char, the parameter can be ASCII</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">char*</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">pointers, output in base 16 form</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">‘%’</td>
+</tr>
+<tr>
+<td style="text-align:center">e/E</td>
+<td style="text-align:center">output float/double by 科学计数法</td>
+</tr>
+<tr>
+<td style="text-align:center">g/G</td>
+<td style="text-align:center">output the whatever type in the shortest way</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Flags"><a href="#Flags" class="headerlink" title="Flags"></a>Flags</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">flags</th>
+<th style="text-align:center">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">show sign</td>
+</tr>
+<tr>
+<td style="text-align:center">[space]</td>
+<td style="text-align:center">‘ ‘ if positive else ‘-‘</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Width"><a href="#Width" class="headerlink" title="Width"></a>Width</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">width</th>
+<th style="text-align:center">description</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">decimal number</td>
+<td style="text-align:center">the least number of digits outputted</td>
+<td style="text-align:center">printf(“%6d”,1000)</td>
+<td style="text-align:center">001000</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">Giving the decimal number in printf parameters</td>
+<td style="text-align:center">printf(“%*d”,5, 1000)</td>
+<td style="text-align:center">01000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If the length of the outputted number is longer than the assigned length, it will be outputted in its original length.</p>
+<h3 id="Precision"><a href="#Precision" class="headerlink" title="Precision"></a>Precision</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">.precision</th>
+<th style="text-align:center">description</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.number</td>
+<td style="text-align:center">For integers, it equals to [width=number].</td>
+<td style="text-align:center">printf(“%.4d”,10)</td>
+<td style="text-align:center">0010</td>
+</tr>
+<tr>
+<td style="text-align:center">.number</td>
+<td style="text-align:center">For floats, it denotes the precision after decimal point.</td>
+<td style="text-align:center">printf(“%.2f”,1.1234)</td>
+<td style="text-align:center">1.12</td>
+</tr>
+<tr>
+<td style="text-align:center">.number</td>
+<td style="text-align:center">For strings, it denotes the most number of chars outputted.</td>
+<td style="text-align:center">printf(“.2s”. “abcd”)</td>
+<td style="text-align:center">“ab”</td>
+</tr>
+<tr>
+<td style="text-align:center">.number</td>
+<td style="text-align:center">For g and G, it denots the number of significant figures.</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">.*</td>
+<td style="text-align:center">Giving the decimal number in printf parameters</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">length</th>
+<th style="text-align:center">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ll</td>
+<td style="text-align:center">‘long long’</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">added before ‘f’, means ‘long double’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><ul>
+<li>input integers<ul>
+<li>scanf(“%d”, &amp;int)</li>
+<li>scanf(“%lld”, &amp;ll)</li>
 </ul>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>Feature 1 : If $w_r$ and $w_g$ are fixed, we can find optimal $w_b$ in $O(log_n)$ time. (Not useful in the standard solution)</p>
-<p>Feature 2: Since the order of r, g, b has only six circumstances, we can enumerate them.</p>
-<p><strong>Feature 3</strong>: Suppose $w_r \leq w_g \leq w_b$, with fixed w_r, <strong>the smallest $w_b$ must be the optimal one</strong>, because $w_b$ always contribute to the answer positively.</p>
-<p>$\therefore$ We enumerate the order, enumerate the <strong>small</strong> weight, find the least <strong>middle</strong>  weight, and find the least <strong>large</strong> weight.</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> r, g, b;</span><br><span class="line">ll rl[<span class="number">1000010</span>];</span><br><span class="line">ll gl[<span class="number">1000010</span>];</span><br><span class="line">ll bl[<span class="number">1000010</span>];</span><br><span class="line">ll fans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">sqr</span> <span class="params">(ll x)</span> </span>&#123;<span class="keyword">return</span> x * x;&#125;</span><br><span class="line"><span class="function">ll <span class="title">calc</span> <span class="params">(ll a, ll b, ll c)</span> </span>&#123;<span class="keyword">return</span> sqr(a - b) + sqr(b - c) + sqr(c - a);&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span> <span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> g, <span class="keyword">int</span> b, ll *rl, ll *gl, ll *bl)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ptg = <span class="number">1</span>, ptb = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= r; i ++) &#123;</span><br><span class="line">		<span class="keyword">while</span> (ptb &lt; b &amp;&amp; bl[ptb] &lt; rl[i])</span><br><span class="line">			ptb ++;</span><br><span class="line">		ll mid = (rl[i] + bl[ptb]) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (ptg &lt; g &amp;&amp; <span class="built_in">abs</span> (gl[ptg] - mid) &gt;= <span class="built_in">abs</span> (gl[ptg + <span class="number">1</span>] - mid))</span><br><span class="line">			ptg ++;</span><br><span class="line">		fans = min (fans, calc (rl[i], gl[ptg], bl[ptb]));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t -- ) &#123;</span><br><span class="line">		fans = <span class="number">1l</span>l&lt;&lt;<span class="number">62</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; r &gt;&gt; g &gt;&gt; b;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= r; i ++)	<span class="built_in">cin</span> &gt;&gt; rl[i];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= g; i ++)	<span class="built_in">cin</span> &gt;&gt; gl[i];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b; i ++)	<span class="built_in">cin</span> &gt;&gt; bl[i];</span><br><span class="line">		sort (rl + <span class="number">1</span>, rl + r + <span class="number">1</span>);</span><br><span class="line">		sort (gl + <span class="number">1</span>, gl + g + <span class="number">1</span>);</span><br><span class="line">		sort (bl + <span class="number">1</span>, bl + b + <span class="number">1</span>);</span><br><span class="line">		solve (r, g, b, rl, gl, bl);</span><br><span class="line">		solve (r, b, g, rl, bl, gl);</span><br><span class="line">		solve (g, r, b, gl, rl, bl);</span><br><span class="line">		solve (g, b, r, gl, bl, rl);</span><br><span class="line">		solve (b, g, r, bl, gl, rl);</span><br><span class="line">		solve (b, r, g, bl, rl, gl);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; fans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="解题收获"><a href="#解题收获" class="headerlink" title="解题收获"></a>解题收获</h3><p>这道题给你最大的收获，就是<strong>常数个变量的大小关系可以$O(C!)$枚举</strong>，尤其是在大小关系确定以后可以简化解法(specifically，出现了新的<strong>单调</strong>性质)的时候。</p>
-<p>这样存在着显然的枚举方法的最优化题目，一般都是要找到一些在枚举中存在的<strong>贪心性质</strong>(m越接近s和l的中点答案越优，l越小答案越优)和<strong>单调性质</strong>，然后简化枚举。在更难的题目中，有些贪心和单调性只在特定的枚举顺序中才存在。</p>
-<p>这道题你考场上FST了…单调性不能乱猜，你在探索算法，而不是在浑水摸鱼。</p>
+</li>
+<li>input doubles<ul>
+<li>scanf(“%lf”, &amp;double)</li>
+<li>scanf(“%Lf”, &amp;long double)</li>
+</ul>
+</li>
+<li><p>input strings</p>
+<ul>
+<li>scanf(“%c”, &amp;char)</li>
+<li>scanf(“%s”, &amp;char*)</li>
+</ul>
+</li>
+<li><p>output integers</p>
+<ul>
+<li><p>printf(“%d”, int)</p>
+</li>
+<li><p>printf(“%lld”, long long)</p>
+</li>
+<li>printf(“%6d”, int)</li>
+</ul>
+</li>
+<li><p>output doubles</p>
+<ul>
+<li>printf(“%lf”, double)</li>
+<li>printf(“%Lf”, long double)</li>
+<li>printf(“%.10Lf”, long double)</li>
+</ul>
+</li>
+<li><p>output strings</p>
+<ul>
+<li>printf(“%s”, char*)</li>
+<li>printf(“%.s”, char*)</li>
+<li>printf(“%c”, char)</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -552,16 +729,6 @@
           
             <a href="/tags/CS/" rel="tag"><i class="fa fa-tag"></i> CS</a>
           
-            <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
-          
-            <a href="/tags/Problem-Reports/" rel="tag"><i class="fa fa-tag"></i> Problem Reports</a>
-          
-            <a href="/tags/Greedy/" rel="tag"><i class="fa fa-tag"></i> Greedy</a>
-          
-            <a href="/tags/Optimization/" rel="tag"><i class="fa fa-tag"></i> Optimization</a>
-          
-            <a href="/tags/Monotonicity/" rel="tag"><i class="fa fa-tag"></i> Monotonicity</a>
-          
         </div>
       
 
@@ -573,8 +740,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020-04-16-CR635A.html" rel="next" title="CR635A解题报告">
-                <i class="fa fa-chevron-left"></i> CR635A解题报告
+              <a href="/2020-06-15-taichi-Mass-Spring-System.html" rel="next" title="GAMES201 Homework 0.5:基于显式时间积分的弹簧质点系统物理引擎">
+                <i class="fa fa-chevron-left"></i> GAMES201 Homework 0.5:基于显式时间积分的弹簧质点系统物理引擎
               </a>
             
           </div>
@@ -582,10 +749,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020-04-16-CR635C.html" rel="prev" title="CF635C解题报告">
-                CF635C解题报告 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -833,7 +996,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法定位"><span class="nav-number">2.</span> <span class="nav-text">算法定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法"><span class="nav-number">3.</span> <span class="nav-text">解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题收获"><span class="nav-number">5.</span> <span class="nav-text">解题收获</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Specifier"><span class="nav-number">1.</span> <span class="nav-text">Specifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flags"><span class="nav-number">2.</span> <span class="nav-text">Flags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Width"><span class="nav-number">3.</span> <span class="nav-text">Width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Precision"><span class="nav-number">4.</span> <span class="nav-text">Precision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Length"><span class="nav-number">5.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">6.</span> <span class="nav-text">Examples</span></a></li></ol></div>
             
 
           </div>

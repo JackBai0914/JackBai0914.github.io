@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Bai&#39;s Blog">
 <meta property="og:description" content="启用博客啦！记录一些操作的步骤，以免以后忘记。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-19T08:09:21.109Z">
+<meta property="og:updated_time" content="2020-10-06T13:09:28.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客操作指南：域名，hexo，本地存储结构">
 <meta name="twitter:description" content="启用博客啦！记录一些操作的步骤，以免以后忘记。">
@@ -417,7 +417,11 @@
         
 
         <div class="post-meta">
-
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color="7D26CD">置顶</font>
+            <span class="post-meta-divider">|</span>
+          
           
           
           
@@ -511,7 +515,7 @@
 </ul>
 <p>这一步将github的主页重定向到了simulated-anneal.info上。但是博主目前还不理解这一步的目的….</p>
 <h3 id="2-hexo常用命令"><a href="#2-hexo常用命令" class="headerlink" title="2.hexo常用命令"></a>2.hexo常用命令</h3><p>在终端中用hexo命令，可以进行本地编辑博客，生成静态网页，部署博客到github上等操作。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &lt;title&gt; <span class="comment">#新建名为&lt;title&gt;的文章，存储在source/_posts中</span></span><br><span class="line">hexo new page &lt;title&gt; <span class="comment">#新建名为&lt;title&gt;的网页，存储在source中</span></span><br><span class="line">hexo new draft &lt;title&gt; <span class="comment">#新建草稿，存储在source/_drafts中</span></span><br><span class="line">hexo new draft &lt;title&gt; <span class="comment">#新建草稿，存储在source/_drafts中</span></span><br><span class="line">hexo publish [layout] &lt;title&gt; <span class="comment">#将文件移到source/_posts中</span></span><br><span class="line"></span><br><span class="line">hexo generate <span class="comment">#生成静态网页</span></span><br><span class="line">hexo generate --watch <span class="comment">#监视文件变动</span></span><br><span class="line">hexo deploy <span class="comment">#部署网页至github上</span></span><br><span class="line">hexo server <span class="comment">#启动网页预览</span></span><br><span class="line">hexo server -p 2333 <span class="comment">#将预览端口改为2333</span></span><br><span class="line">hexo clean <span class="comment">#清除缓存，网页正常情况下可以忽略此条命令。执行该指令后。会删掉站点根目录下的public文件夹。明白了吧，public即存储生成的静态网页。</span></span><br><span class="line"></span><br><span class="line">hexo deploy --generate <span class="comment">#在生成完毕后自动部署网站</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &lt;title&gt; <span class="comment">#新建名为&lt;title&gt;的文章，存储在source/_posts中</span></span><br><span class="line">hexo new page &lt;title&gt; <span class="comment">#新建名为&lt;title&gt;的网页，存储在source中</span></span><br><span class="line">hexo new draft &lt;title&gt; <span class="comment">#新建草稿，存储在source/_drafts中</span></span><br><span class="line">hexo publish [layout] &lt;title&gt; <span class="comment">#将文件移到source/_posts中</span></span><br><span class="line"></span><br><span class="line">hexo generate <span class="comment">#生成静态网页</span></span><br><span class="line">hexo generate --watch <span class="comment">#监视文件变动</span></span><br><span class="line">hexo deploy <span class="comment">#部署网页至github上</span></span><br><span class="line">hexo server <span class="comment">#启动网页预览</span></span><br><span class="line">hexo server -p 2333 <span class="comment">#将预览端口改为2333</span></span><br><span class="line">hexo clean <span class="comment">#清除缓存，网页正常情况下可以忽略此条命令。执行该指令后。会删掉站点根目录下的public文件夹。明白了吧，public即存储生成的静态网页。</span></span><br><span class="line"></span><br><span class="line">hexo deploy --generate <span class="comment">#在生成完毕后自动部署网站</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-本地存储结构"><a href="#3-本地存储结构" class="headerlink" title="3.本地存储结构"></a>3.本地存储结构</h3><ul>
 <li><p>sources：修改文章和博客结构的地方。</p>
 </li>
@@ -568,8 +572,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020-04-12-CFRecording.html" rel="prev" title="Codeforces Diary">
-                Codeforces Diary <i class="fa fa-chevron-right"></i>
+              <a href="/2020-04-12-CFRecording.html" rel="prev" title="Dream to Red">
+                Dream to Red <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,7 +648,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
