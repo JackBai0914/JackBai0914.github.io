@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Bai&#39;s Blog">
 <meta property="og:description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-10T23:10:17.669Z">
+<meta property="og:updated_time" content="2020-10-10T23:11:27.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Grand Round 11 比赛总结">
 <meta name="twitter:description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
@@ -509,16 +509,13 @@
 <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a><a href="https://codeforces.com/contest/1427/problem/B" target="_blank" rel="noopener">B</a></h2><h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
 <li><p>发现1/2/3的区别。确定贪心的正确性。</p>
 </li>
-<li><p>思考贪心的细节。如，哪些情况只能是1，有哪些边界</p>
+<li><p>思考贪心的细节。如，哪些情况只能是1，有哪些Special cases：</p>
 <ol>
-<li><p>没有W</p>
-<ol>
+<li>没有W<ol>
 <li>只有1场</li>
+<li>> 1场</li>
 </ol>
 </li>
-</ol>
-</li>
-<li>> 1场<ol>
 <li>前后的L</li>
 </ol>
 </li>
@@ -542,7 +539,7 @@
 <li>对操作进行整理：加法实现乘法；异或是最后一步。</li>
 <li>加法，异或，1。想到了什么？<strong>裴蜀定理</strong>。寻找x, y, 使得gcd(x, y)==1.</li>
 <li>最简单的思路是随机y。但是，<strong>为何不思考一下，给定x，能否确定性的构造出$y$ $s.t. gcd(x, y)==1$</strong></li>
-<li>假设x的最高二进制位为k。y = $x$^ $(x<em>2^k)$ = $(2^k+1)</em>x-2^k*2$，一定和x互质。</li>
+<li>假设x的最高二进制位为k。y = $x$ ^ $(x<em>2^k)$ = $(2^k+1)</em>x-2^k*2$，一定和x互质。</li>
 </ol>
 <h2 id><a href="#" class="headerlink" title="#"></a>#</h2>
       
