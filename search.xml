@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CGR_11]]></title>
+    <url>%2F2020-10-10-CGR-11.html</url>
+    <content type="text"><![CDATA[粗心是最大的问题。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。 教训： (B) 贪心/动态规划的时候，一定要提前想清楚边界情况。 (E) 随机化算法不轻易用。不如想清楚随机化的部分能否转为确定性的。 (A) 对于简单的题目，写程序以前，想好程序的结构&amp;分类讨论。 AB破题方法 发现1/2/3的区别。确定贪心的正确性。 思考贪心的细节。如，哪些情况只能是1，有哪些边界 没有W 只有1场 > 1场 前后的L C破题方法 发现特殊的限制：r小，t不等。由此，发现特殊的性质：任意两个间隔&gt;1000的讲座，一定可以到达。 想出暴力DP。 发现性质对DP的优化。 思考 经典DP问题，特殊条件限制优化 D破题方法 思考“有序”的形成方法。可以是“$\forall i \in [1, n]$, 第i个位置是i”，也可以是“$\forall i \in [1, n$), i下一个位置是i+i”。思考本题的操作发现，每个位置上的数字（绝对位置）很难维护。但是数字的相对位置很好维护。 所以，每一次操作增加一对“相邻数”。 思考 对“用特定操作O构造特定结构S”的题目的普适思考：寻找S的等价命题/等价构造方法，在其中找出与O性质相似的一个，用O构造。 E破题方法 对操作进行整理：加法实现乘法；异或是最后一步。 加法，异或，1。想到了什么？裴蜀定理。寻找x, y, 使得gcd(x, y)==1. 最简单的思路是随机y。但是，为何不思考一下，给定x，能否确定性的构造出$y$ $s.t. gcd(x, y)==1$ 假设x的最高二进制位为k。y = $x$^ $(x2^k)$ = $(2^k+1)x-2^k*2$，一定和x互质。 #]]></content>
+      <categories>
+        <category>Competitions</category>
+        <category>Codeforces</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Algorithms</tag>
+        <tag>Codeforces</tag>
+        <tag>Greedy</tag>
+        <tag>Construction</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Scanf&Printf用法梳理]]></title>
     <url>%2F2020-10-06-C-IO.html</url>
     <content type="text"><![CDATA[从此以后，改用C语言的输入输出以提高效率。 %[flags][width][.precision][length]specifier‘ Specifier specifier description d/i 32bits integer u 32bits unsigned integer f float (single-precision) lf double (double-precision) c char, the parameter can be ASCII s char* p pointers, output in base 16 form % ‘%’ e/E output float/double by 科学计数法 g/G output the whatever type in the shortest way Flags flags description + show sign [space] ‘ ‘ if positive else ‘-‘ 0 for all numbers, use 0 instead of ‘ ‘ to fill in the leading space Width width description Example Output decimal number the least number of digits outputted printf(“%6d”,1000) 001000 * Giving the decimal number in printf parameters printf(“%*d”,5, 1000) 01000 If the length of the outputted number is longer than the assigned length, it will be outputted in its original length. Precision .precision description Example Output .number For integers, it equals to [width=number]. printf(“%.4d”,10) 0010 .number For floats, it denotes the precision after decimal point. printf(“%.2f”,1.1234) 1.12 .number For strings, it denotes the most number of chars outputted. printf(“.2s”. “abcd”) “ab” .number For g and G, it denots the number of significant figures. .* Giving the decimal number in printf parameters Length length description ll ‘long long’ L added before ‘f’, means ‘long double’ Examples input integers scanf(“%d”, &amp;int) scanf(“%lld”, &amp;ll) input doubles scanf(“%lf”, &amp;double) scanf(“%Lf”, &amp;long double) input strings scanf(“%c”, &amp;char) scanf(“%s”, &amp;char*) output integers printf(“%d”, int) printf(“%lld”, long long) printf(“%6d”, int) output doubles printf(“%lf”, double) printf(“%Lf”, long double) printf(“%.10Lf”, long double) output strings printf(“%s”, char*) printf(“%.s”, char*) printf(“%c”, char)]]></content>
@@ -122,8 +138,8 @@
       <tags>
         <tag>CS</tag>
         <tag>Algorithms</tag>
-        <tag>LinearBase</tag>
         <tag>ALgorithm Summaries</tag>
+        <tag>LinearBase</tag>
       </tags>
   </entry>
   <entry>
@@ -220,15 +236,15 @@
         <tag>CS</tag>
         <tag>Algorithms</tag>
         <tag>Problem Reports</tag>
-        <tag>Tree</tag>
         <tag>Greedy</tag>
+        <tag>Tree</tag>
         <tag>Optimization</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Dream to Red]]></title>
     <url>%2F2020-04-12-CFRecording.html</url>
-    <content type="text"><![CDATA[不想再拖了。CF上红名不难，难的是在心中点燃火焰。开始吧。 Initial Rating: 2161 2020.4.12 CR633 Div 1 Ranked 534 out of 1392 Rating: (+1) 2161 -&gt; 2162 总结 从过程上看，发挥中等。因思维生疏而导致想A (观察结论题) 和B (图论思维题)的时间过长；因手指生疏而导致写A错了三次 (本质也是没想清)，写C (找规律题)写得很复杂。 等级分的变化比较让我感到安慰。这说明，我只要正常发挥，稳定的做出该做的(三道)题，等级分是不会下降的。不过想要上红，一是要增加思考速度+手速，二是要积极思考D。不做出D，是很难上红的。 2020.4.15 CR635 Div 1 Ranked 1338 out of 2619 Rating: (-106) 2162 -&gt; 2056 12345意料之中的难受。也是久违的。你的思路十分闭塞。思考问题的时候，已经不再能抓住本质。可我还能看得见光。 我会好好睡觉，戒掉使人变得愚钝的恶习，我会重新开始思考。 这一切都还来得及。我不会放弃。]]></content>
+    <content type="text"><![CDATA[不想再拖了。CF上红名不难，难的是在心中点燃火焰。开始吧。 Initial Rating: 2161 2020.4.12 CR633 Div 1 Ranked 534 out of 1392 Rating: (+1) 2161 -&gt; 2162 总结 从过程上看，发挥中等。因思维生疏而导致想A (观察结论题) 和B (图论思维题)的时间过长；因手指生疏而导致写A错了三次 (本质也是没想清)，写C (找规律题)写得很复杂。 等级分的变化比较让我感到安慰。这说明，我只要正常发挥，稳定的做出该做的(三道)题，等级分是不会下降的。不过想要上红，一是要增加思考速度+手速，二是要积极思考D。不做出D，是很难上红的。 2020.4.15 CR635 Div 1 Ranked 1338 out of 2619 Rating: (-106) 2162 -&gt; 2056 12345意料之中的难受。也是久违的。你的思路十分闭塞。思考问题的时候，已经不再能抓住本质。可我还能看得见光。 我会好好睡觉，戒掉使人变得愚钝的恶习，我会重新开始思考。 这一切都还来得及。我不会放弃。 2020.10.10 CGR 11 Ranked 1338 out of 2619 Rating: (-58) 2293 -&gt; 2235 12]]></content>
       <categories>
         <category>Competitions</category>
         <category>Codeforces</category>
