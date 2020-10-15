@@ -95,14 +95,14 @@
 </script>
 
   <meta name="description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
-<meta name="keywords" content="CS,Algorithms,Codeforces,Greedy,Construction">
+<meta name="keywords" content="CS,Algorithms,Construction,Codeforces,Greedy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Grand Round 11 比赛总结">
 <meta property="og:url" content="http://yoursite.com/2020-10-10-CGR-11.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
 <meta property="og:description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-10T23:11:27.308Z">
+<meta property="og:updated_time" content="2020-10-10T23:11:49.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Grand Round 11 比赛总结">
 <meta name="twitter:description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
@@ -541,7 +541,7 @@
 <li>最简单的思路是随机y。但是，<strong>为何不思考一下，给定x，能否确定性的构造出$y$ $s.t. gcd(x, y)==1$</strong></li>
 <li>假设x的最高二进制位为k。y = $x$ ^ $(x<em>2^k)$ = $(2^k+1)</em>x-2^k*2$，一定和x互质。</li>
 </ol>
-<h2 id><a href="#" class="headerlink" title="#"></a>#</h2>
+
       
     </div>
 
@@ -575,11 +575,11 @@
           
             <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
           
+            <a href="/tags/Construction/" rel="tag"><i class="fa fa-tag"></i> Construction</a>
+          
             <a href="/tags/Codeforces/" rel="tag"><i class="fa fa-tag"></i> Codeforces</a>
           
             <a href="/tags/Greedy/" rel="tag"><i class="fa fa-tag"></i> Greedy</a>
-          
-            <a href="/tags/Construction/" rel="tag"><i class="fa fa-tag"></i> Construction</a>
           
         </div>
       
@@ -601,6 +601,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020-10-15-CC-October-challenge.html" rel="prev" title="CC_October_challenge">
+                CC_October_challenge <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -674,7 +678,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -784,7 +788,13 @@
         
           
         
-        <span class="site-state-item-count">20</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -848,7 +858,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教训："><span class="nav-number">1.</span> <span class="nav-text">教训：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">3.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法"><span class="nav-number">3.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-1"><span class="nav-number">4.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">4.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">5.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-2"><span class="nav-number">5.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考-1"><span class="nav-number">5.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">6.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-3"><span class="nav-number">6.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">#</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教训："><span class="nav-number">1.</span> <span class="nav-text">教训：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">3.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法"><span class="nav-number">3.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-1"><span class="nav-number">4.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">4.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">5.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-2"><span class="nav-number">5.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考-1"><span class="nav-number">5.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">6.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法-3"><span class="nav-number">6.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li></ol></div>
             
 
           </div>

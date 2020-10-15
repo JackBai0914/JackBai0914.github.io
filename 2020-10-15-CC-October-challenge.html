@@ -94,17 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="123456789101112131415#include &amp;lt;ctime&amp;gt;#include &amp;lt;cmath&amp;gt;#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstdlib&amp;gt;#include &amp;lt;cstring&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt;using namespa">
+  <meta name="description" content="收获： 绝对值函数：用分类讨论进行转化 BITSET！！！">
+<meta name="keywords" content="CS,Algorithms,Codechef,Bitset,Construction,MST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="function testing">
-<meta property="og:url" content="http://yoursite.com/2019-07-27-function-testing.html">
+<meta property="og:title" content="CC_October_challenge">
+<meta property="og:url" content="http://yoursite.com/2020-10-15-CC-October-challenge.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
-<meta property="og:description" content="123456789101112131415#include &amp;lt;ctime&amp;gt;#include &amp;lt;cmath&amp;gt;#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstdlib&amp;gt;#include &amp;lt;cstring&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt;using namespa">
+<meta property="og:description" content="收获： 绝对值函数：用分类讨论进行转化 BITSET！！！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-19T08:06:42.259Z">
+<meta property="og:updated_time" content="2020-10-15T00:09:10.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="function testing">
-<meta name="twitter:description" content="123456789101112131415#include &amp;lt;ctime&amp;gt;#include &amp;lt;cmath&amp;gt;#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstdlib&amp;gt;#include &amp;lt;cstring&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt;using namespa">
+<meta name="twitter:title" content="CC_October_challenge">
+<meta name="twitter:description" content="收获： 绝对值函数：用分类讨论进行转化 BITSET！！！">
 
 
 
@@ -112,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019-07-27-function-testing">
+  <link rel="canonical" href="http://yoursite.com/2020-10-15-CC-October-challenge">
 
 
 
@@ -123,7 +124,7 @@
 </script>
 
   
-  <title>function testing | Bai's Blog</title>
+  <title>CC_October_challenge | Bai's Blog</title>
   
 
 
@@ -392,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019-07-27-function-testing.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-10-15-CC-October-challenge.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Bai">
@@ -409,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">function testing
+          <h1 class="post-title" itemprop="name headline">CC_October_challenge
 
               
             
@@ -435,12 +436,34 @@
                 
               
 
-              <time title="创建时间：2019-07-27 20:43:43" itemprop="dateCreated datePublished" datetime="2019-07-27T20:43:43+01:00">2019-07-27</time>
+              <time title="创建时间：2020-10-15 00:33:24" itemprop="dateCreated datePublished" datetime="2020-10-15T00:33:24+01:00">2020-10-15</time>
             </span>
           
 
           
 
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Competitions/" itemprop="url" rel="index"><span itemprop="name">Competitions</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Competitions/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -475,7 +498,26 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">  <span class="built_in">string</span> s;</span><br><span class="line">  s = <span class="string">"Hello World！"</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="收获："><a href="#收获：" class="headerlink" title="收获："></a>收获：</h2><ul>
+<li>绝对值函数：用分类讨论进行转化</li>
+<li>BITSET！！！</li>
+</ul>
+<a id="more"></a>
+<h2 id="POSAND"><a href="#POSAND" class="headerlink" title="POSAND"></a><a href="https://www.codechef.com/OCT20B/problems/POSAND" target="_blank" rel="noopener">POSAND</a></h2><p>构造题的经典思路：</p>
+<ul>
+<li>小case特殊讨论</li>
+<li>大case用增量法构造</li>
+</ul>
+<h2 id="ADDSQURE"><a href="#ADDSQURE" class="headerlink" title="ADDSQURE"></a><a href="https://www.codechef.com/OCT20B/problems/ADDSQURE" target="_blank" rel="noopener"><strong>ADDSQURE</strong></a></h2><p><strong>Bitset！！！</strong></p>
+<p>二进制操作，速度*64/*32。</p>
+<p><a href="https://www.cnblogs.com/RabbitHu/p/bitset.html" target="_blank" rel="noopener">Bitset教程</a></p>
+<h2 id="DDIMMST"><a href="#DDIMMST" class="headerlink" title="DDIMMST"></a><a href="https://www.codechef.com/OCT20B/problems/DDIMMST" target="_blank" rel="noopener"><strong>DDIMMST</strong></a></h2><h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
+<li>定义了边权函数的题目：一定要利用边权的性质，简化选边的过程。</li>
+<li>将边权函数中的绝对值转化成分类讨论，最大边一定在某些候选边内。</li>
+</ol>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><ul>
+<li>最小生成树有三种方法：Prim，Kruskal，Boruvka。<strong>选择可以应用性质的那一个。</strong></li>
+</ul>
 
       
     </div>
@@ -501,6 +543,25 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/CS/" rel="tag"><i class="fa fa-tag"></i> CS</a>
+          
+            <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
+          
+            <a href="/tags/Codechef/" rel="tag"><i class="fa fa-tag"></i> Codechef</a>
+          
+            <a href="/tags/Bitset/" rel="tag"><i class="fa fa-tag"></i> Bitset</a>
+          
+            <a href="/tags/Construction/" rel="tag"><i class="fa fa-tag"></i> Construction</a>
+          
+            <a href="/tags/MST/" rel="tag"><i class="fa fa-tag"></i> MST</a>
+          
+        </div>
+      
 
       
       
@@ -510,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019-07-26-MyFirstBlog.html" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020-10-10-CGR-11.html" rel="next" title="Codeforces Grand Round 11 比赛总结">
+                <i class="fa fa-chevron-left"></i> Codeforces Grand Round 11 比赛总结
               </a>
             
           </div>
@@ -519,10 +580,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019-07-28-Markdown使用攻略.html" rel="prev" title="Markdown使用攻略">
-                Markdown使用攻略 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -757,6 +823,23 @@
       
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#收获："><span class="nav-number">1.</span> <span class="nav-text">收获：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POSAND"><span class="nav-number">2.</span> <span class="nav-text">POSAND</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ADDSQURE"><span class="nav-number">3.</span> <span class="nav-text">ADDSQURE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDIMMST"><span class="nav-number">4.</span> <span class="nav-text">DDIMMST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破题方法"><span class="nav-number">4.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">4.2.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -934,6 +1017,53 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
