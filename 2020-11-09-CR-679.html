@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路  A Perform Easily题意给定序列An，以及B1-B6。求数组Cn使得max(">
+  <meta name="description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路">
 <meta name="keywords" content="CS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CR-679">
+<meta property="og:title" content="Codeforces Round 679 比赛总结">
 <meta property="og:url" content="http://yoursite.com/2020-11-09-CR-679.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
-<meta property="og:description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路  A Perform Easily题意给定序列An，以及B1-B6。求数组Cn使得max(">
+<meta property="og:description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-09T15:13:27.967Z">
+<meta property="og:updated_time" content="2020-11-09T20:00:42.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CR-679">
-<meta name="twitter:description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路  A Perform Easily题意给定序列An，以及B1-B6。求数组Cn使得max(">
+<meta name="twitter:title" content="Codeforces Round 679 比赛总结">
+<meta name="twitter:description" content="模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路">
 
 
 
@@ -124,7 +124,7 @@
 </script>
 
   
-  <title>CR-679 | Bai's Blog</title>
+  <title>Codeforces Round 679 比赛总结 | Bai's Blog</title>
   
 
 
@@ -410,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CR-679
+          <h1 class="post-title" itemprop="name headline">Codeforces Round 679 比赛总结
 
               
             
@@ -491,12 +491,12 @@
       
 
       
-        <a id="more"></a>
-<h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ul>
+        <h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ul>
 <li>寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。</li>
 <li>树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。</li>
 <li><strong>逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路</strong></li>
 </ul>
+<a id="more"></a>
 <h2 id="A-Perform-Easily"><a href="#A-Perform-Easily" class="headerlink" title="A Perform Easily"></a><a href="https://codeforces.com/contest/1434/problem/A" target="_blank" rel="noopener">A</a> Perform Easily</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定序列An，以及B1-B6。求数组Cn使得max(Ai-B_Ci) - min(Ai-B_Ci)最小。</p>
 <h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><p>考虑所有的Ai-Bj所构成的序列。我们要在其值域选出一段区间使得其包含由A1-An生成的数。解法为<strong>双指针</strong>。</p>
 <p>这道题当时想了好久…</p>

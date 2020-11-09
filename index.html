@@ -587,7 +587,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020-11-09-CR-679.html" class="post-title-link" itemprop="url">CR-679</a>
+                <a href="/2020-11-09-CR-679.html" class="post-title-link" itemprop="url">Codeforces Round 679 比赛总结</a>
               
             
           </h1>
@@ -668,62 +668,20 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ul>
+          <h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ul>
 <li>寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。</li>
 <li>树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。</li>
 <li><strong>逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路</strong></li>
 </ul>
-<h2 id="A-Perform-Easily"><a href="#A-Perform-Easily" class="headerlink" title="A Perform Easily"></a><a href="https://codeforces.com/contest/1434/problem/A" target="_blank" rel="noopener">A</a> Perform Easily</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定序列An，以及B1-B6。求数组Cn使得max(Ai-B_Ci) - min(Ai-B_Ci)最小。</p>
-<h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><p>考虑所有的Ai-Bj所构成的序列。我们要在其值域选出一段区间使得其包含由A1-An生成的数。解法为<strong>双指针</strong>。</p>
-<p>这道题当时想了好久…</p>
-<h2 id="B"><a href="#B" class="headerlink" title="B"></a><a href="https://codeforces.com/contest/1427/problem/B" target="_blank" rel="noopener">B</a></h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给定一个操作序列，包含两种操作：</p>
-<ol>
-<li>一个物品被加入了集合</li>
-<li>声明此时集合中最小的物品价值为v，并将其拿出集合。</li>
-</ol>
-<p>求加入物品价值的一个合法解。</p>
-<h3 id="破题方法-1"><a href="#破题方法-1" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
-<li><p><strong>简化策略：</strong>假设每次拿出的价值最小的物品，就是最后放进去的物品。</p>
-<p><strong>最优性证明：</strong>假设x次操作拿出的物品价值为$v_x$，将其放入的操作序号为$p_x$, $v_x$ 造成非法情况当且仅当$\exist y \in (p_x, x)$ s.t. $v_y &gt; v_x$. 所以，当$p_x$取最大时，$v_x$不会造成非法情况。$p_x$取最大所造成的占位也不会影响最优性。</p>
-</li>
-<li><p>构造<strong>贪心</strong>策略：维护栈结构，分配物品，最后判断合法性。</p>
-</li>
-</ol>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a><a href="https://codeforces.com/contest/1434/problem/C" target="_blank" rel="noopener">C</a></h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>定义一次在t时间攻击：立刻造成a点伤害，在接下来c秒，每秒回复b点生命，在t+d时刻及以后才能发起下一次攻击。求攻击能杀死的怪物的最大生命值。</p>
-<h3 id="破题方法-2"><a href="#破题方法-2" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
-<li>何时无敌：a&gt;b*c</li>
-<li>若不无敌，则一定要在c时间内解决战斗。</li>
-<li>找规律：在c时间内，是定值减等差数列，可O(1)计算。</li>
-</ol>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><ul>
-<li><strong>逐层剖析问题。</strong>每一层都很trivial。</li>
-</ul>
-<h2 id="D-Roads-and-Ramen"><a href="#D-Roads-and-Ramen" class="headerlink" title="D Roads and Ramen"></a>D <a href="https://codeforces.com/contest/1413/problem/F" target="_blank" rel="noopener">Roads and Ramen</a></h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给边01染色，单边修改，询问树上最长偶直径。</p>
-<h3 id="破题方法-3"><a href="#破题方法-3" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
-<li>首先将边的01权重化为点权。</li>
-<li>重要性质：同色直径的一个端点一定是直径的端点。</li>
-<li>分别以直径端点为根，线段树维护子树反转。</li>
-</ol>
-<h3 id="思考-1"><a href="#思考-1" class="headerlink" title="思考"></a>思考</h3><ul>
-<li>本质上是“01点权，区间修改，寻找同权直径”。</li>
-</ul>
-<h2 id="E-A-Convex-Game"><a href="#E-A-Convex-Game" class="headerlink" title="E A Convex Game"></a>E <a href="https://codeforces.com/contest/1434/problem/E" target="_blank" rel="noopener">A Convex Game</a></h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>类Nim游戏：一堆石子有k ($k \leq 1e5$)个状态($v1 &lt; v2 &lt; … &lt; v_k \leq 1e5$)， 两人从v1开始单调的选状态，假设上上个人选的状态为$v_h$上一个人选的状态为$v_i$, 你选的状态为$v_j$，则要满足：</p>
-<ol>
-<li>$i&lt;j$</li>
-<li>$v_i - v_h &lt; v_j - v_i$</li>
-</ol>
-<p>求这堆石子是否为先手胜。</p>
-<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><ul>
-<li>SG value is smaller than $\sqrt{2*maxv}+1$.</li>
-</ul>
-<p>目前暴力思路：SG状态有k^2个，计算每个需要k的时间。</p>
-<ul>
-<li>当固定$v_i$，逐步缩$v_i-v_h$的时候，sg value只会增加。所以可以开dp[i][sg-value]数组记录sg值的变化。此时状态$k*\sqrt k$个。</li>
-</ul>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2020-11-09-CR-679.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
