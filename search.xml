@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CR-679]]></title>
+    <url>%2F2020-11-09-CR-679.html</url>
+    <content type="text"><![CDATA[模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路 A Perform Easily题意给定序列An，以及B1-B6。求数组Cn使得max(Ai-B_Ci) - min(Ai-B_Ci)最小。 破题方法考虑所有的Ai-Bj所构成的序列。我们要在其值域选出一段区间使得其包含由A1-An生成的数。解法为双指针。 这道题当时想了好久… B题意给定一个操作序列，包含两种操作： 一个物品被加入了集合 声明此时集合中最小的物品价值为v，并将其拿出集合。 求加入物品价值的一个合法解。 破题方法 简化策略：假设每次拿出的价值最小的物品，就是最后放进去的物品。 最优性证明：假设x次操作拿出的物品价值为$v_x$，将其放入的操作序号为$p_x$, $v_x$ 造成非法情况当且仅当$\exist y \in (p_x, x)$ s.t. $v_y &gt; v_x$. 所以，当$p_x$取最大时，$v_x$不会造成非法情况。$p_x$取最大所造成的占位也不会影响最优性。 构造贪心策略：维护栈结构，分配物品，最后判断合法性。 C题意定义一次在t时间攻击：立刻造成a点伤害，在接下来c秒，每秒回复b点生命，在t+d时刻及以后才能发起下一次攻击。求攻击能杀死的怪物的最大生命值。 破题方法 何时无敌：a&gt;b*c 若不无敌，则一定要在c时间内解决战斗。 找规律：在c时间内，是定值减等差数列，可O(1)计算。 思考 逐层剖析问题。每一层都很trivial。 D Roads and Ramen题意给边01染色，单边修改，询问树上最长偶直径。 破题方法 首先将边的01权重化为点权。 重要性质：同色直径的一个端点一定是直径的端点。 分别以直径端点为根，线段树维护子树反转。 思考 本质上是“01点权，区间修改，寻找同权直径”。 E A Convex Game题意类Nim游戏：一堆石子有k ($k \leq 1e5$)个状态($v1 &lt; v2 &lt; … &lt; v_k \leq 1e5$)， 两人从v1开始单调的选状态，假设上上个人选的状态为$v_h$上一个人选的状态为$v_i$, 你选的状态为$v_j$，则要满足： $i&lt;j$ $v_i - v_h &lt; v_j - v_i$ 求这堆石子是否为先手胜。 技巧 SG value is smaller than $\sqrt{2*maxv}+1$. 目前暴力思路：SG状态有k^2个，计算每个需要k的时间。 当固定$v_i$，逐步缩$v_i-v_h$的时候，sg value只会增加。所以可以开dp[i][sg-value]数组记录sg值的变化。此时状态$k*\sqrt k$个。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Codechef October Challenge]]></title>
     <url>%2F2020-10-15-CC-October-challenge.html</url>
     <content type="text"><![CDATA[收获： 绝对值函数：用分类讨论进行转化 BITSET！！！ POSAND构造题的经典思路： 小case特殊讨论 大case用增量法构造 ADDSQUREBitset！！！ 二进制操作，速度*64/*32。 Bitset教程 DDIMMST破题方法 定义了边权函数的题目：一定要利用边权的性质，简化选边的过程。 将边权函数中的绝对值转化成分类讨论，最大边一定在某些候选边内。 思考 最小生成树有三种方法：Prim，Kruskal，Boruvka。选择可以应用性质的那一个。]]></content>
@@ -171,8 +182,8 @@
         <tag>CS</tag>
         <tag>Algorithms</tag>
         <tag>Problem Reports</tag>
-        <tag>DP</tag>
         <tag>LinearBase</tag>
+        <tag>DP</tag>
         <tag>MeetinMiddle</tag>
       </tags>
   </entry>
