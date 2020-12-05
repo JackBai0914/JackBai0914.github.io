@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2020-12-05-Winter-Plan.html</url>
+    <content type="text"><![CDATA[大一寒假学习计划。 寒假计划自由时间 12.5 - 1.17，44天。 12.14-12.18 实习 想做的事-draft 二刷Functional Programming。搞懂细节，non-trivial repetition，为之后fp相关的课程打好基础。 学习Web相关的1-2门课程。你向往全栈的能力。 真正完成一门AI的通识课，再完成一门AI的进阶课（可以是CV）。 数学，让你十分纠结。你知道自己最强烈的兴趣并不在数学上，但是你也清楚数学的重要性，憧憬数学的抽象性和“世外桃源”的美。至关重要的是，不能被身边less-thoughtful的人给带了节奏。你知道他们的层次，你不希望逐渐变得和他们一样。看看Bazinga吧，看看tau~，同龄人定心钻研的样子就是对你最大的刺激和鼓励。假期按照Bazinga推荐的方法学习Analysis和Linear Algebra，用Rudin和Done Right两本教材，继续建立知识体系；同时，尽量去补calculus和geo的课。 阅读Teach yourself physics, 你向往的方向。 读《计算中的上帝》 预习下学期的课程。 编程竞赛 — 上红名 实习 — 作出有意义的结果 事务规划-tabled 《Intro to FP》，11节 《Deep Learning》, 15 weeks (3 weeks); 进阶AI课程未知 《Done Right》，《Baby Rudin》上课&amp;做题 《Teach Yourself Physics》前两周读完 做下学期算法的sheet？ CyberSecurity Specialisation 70 hours Full-Stack Web Development with React Specialisation 150 hours 时间规划：两个阶段Part1: 函数式编程巩固，实习，人工智能通识，数理基础 每天任务 exp时间 强度 读《Intro to FP》写报告，2天一节。认真写报告，理解内涵，做足量的练习题 3h 9 《Deep Learning》网课 5h 7 一天三节MIT数学课。建立微积分框架，巩固线性代数的形象理解 2h 9 《Teach Yourself Physics》 1h 6 锻炼 1h - 和爸爸妈妈通话 0.5h - 吃饭 2h - 睡觉 8h - Part2: 课程预习，数理进阶，全栈技能待更新 节奏 &amp; 注意事项 保持睡眠至关重要。 每天时间可浮动，每周一总结；平均学习时间不能少于11h/天。 一定注意区分高强度/中强度的学习，高效率的用大脑；就像长跑。 别做无谓的，放纵的，消耗精力的事情了。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Codeforces Round 679 比赛总结]]></title>
     <url>%2F2020-11-09-CR-679.html</url>
     <content type="text"><![CDATA[模型总结 寻找”最小满足一定性质的区间“可以利用单调性做优化，在值域做单调遍历。 树上的点权-边权转化：边权可以被求和放到点上，dis(u, v) = dis(u)+dis(v)-dis(lca(u, v))*2。 逐层剖析问题。每剥下一层以后，一个重新formulate一遍问题，清空缓存，寻找下一步思路 A Perform Easily题意给定序列An，以及B1-B6。求数组Cn使得max(Ai-B_Ci) - min(Ai-B_Ci)最小。 破题方法考虑所有的Ai-Bj所构成的序列。我们要在其值域选出一段区间使得其包含由A1-An生成的数。解法为双指针。 这道题当时想了好久… B题意给定一个操作序列，包含两种操作： 一个物品被加入了集合 声明此时集合中最小的物品价值为v，并将其拿出集合。 求加入物品价值的一个合法解。 破题方法 简化策略：假设每次拿出的价值最小的物品，就是最后放进去的物品。 最优性证明：假设x次操作拿出的物品价值为$v_x$，将其放入的操作序号为$p_x$, $v_x$ 造成非法情况当且仅当$\exist y \in (p_x, x)$ s.t. $v_y &gt; v_x$. 所以，当$p_x$取最大时，$v_x$不会造成非法情况。$p_x$取最大所造成的占位也不会影响最优性。 构造贪心策略：维护栈结构，分配物品，最后判断合法性。 C题意定义一次在t时间攻击：立刻造成a点伤害，在接下来c秒，每秒回复b点生命，在t+d时刻及以后才能发起下一次攻击。求攻击能杀死的怪物的最大生命值。 破题方法 何时无敌：a&gt;b*c 若不无敌，则一定要在c时间内解决战斗。 找规律：在c时间内，是定值减等差数列，可O(1)计算。 思考 逐层剖析问题。每一层都很trivial。 D Roads and Ramen题意给边01染色，单边修改，询问树上最长偶直径。 破题方法 首先将边的01权重化为点权。 重要性质：同色直径的一个端点一定是直径的端点。 分别以直径端点为根，线段树维护子树反转。 思考 本质上是“01点权，区间修改，寻找同权直径”。 E A Convex Game题意类Nim游戏：一堆石子有k ($k \leq 1e5$)个状态($v1 &lt; v2 &lt; … &lt; v_k \leq 1e5$)， 两人从v1开始单调的选状态，假设上上个人选的状态为$v_h$上一个人选的状态为$v_i$, 你选的状态为$v_j$，则要满足： $i&lt;j$ $v_i - v_h &lt; v_j - v_i$ 求这堆石子是否为先手胜。 技巧 SG value is smaller than $\sqrt{2*maxv}+1$. 目前暴力思路：SG状态有k^2个，计算每个需要k的时间。 当固定$v_i$，逐步缩$v_i-v_h$的时候，sg value只会增加。所以可以开dp[i][sg-value]数组记录sg值的变化。此时状态$k*\sqrt k$个。]]></content>
@@ -39,8 +50,8 @@
       <tags>
         <tag>CS</tag>
         <tag>Algorithms</tag>
-        <tag>Construction</tag>
         <tag>Codeforces</tag>
+        <tag>Construction</tag>
         <tag>Greedy</tag>
       </tags>
   </entry>
@@ -166,8 +177,8 @@
       <tags>
         <tag>CS</tag>
         <tag>Algorithms</tag>
-        <tag>ALgorithm Summaries</tag>
         <tag>LinearBase</tag>
+        <tag>ALgorithm Summaries</tag>
       </tags>
   </entry>
   <entry>
@@ -182,8 +193,8 @@
         <tag>CS</tag>
         <tag>Algorithms</tag>
         <tag>Problem Reports</tag>
-        <tag>LinearBase</tag>
         <tag>DP</tag>
+        <tag>LinearBase</tag>
         <tag>MeetinMiddle</tag>
       </tags>
   </entry>
