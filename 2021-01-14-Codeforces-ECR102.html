@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="模型总结 (D) 对于Operation $+$, 若其满足 $\forall a, b, c, a + c &#x3D; a + b + c - b$ (即存在逆元且满足交换律)，则可以考虑前缀和维护信息。 (E) 最优化问题“消除restriction”的方法： 放宽限制 (min&#x2F;max-&gt;all) 发现generalize的问题的最优答案不变 generalize的问题更好解决(贪心，存在最优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces-ECR102">
+<meta property="og:url" content="http://yoursite.com/2021-01-14-Codeforces-ECR102.html">
+<meta property="og:site_name" content="Bai&#39;s Blog">
+<meta property="og:description" content="模型总结 (D) 对于Operation $+$, 若其满足 $\forall a, b, c, a + c &#x3D; a + b + c - b$ (即存在逆元且满足交换律)，则可以考虑前缀和维护信息。 (E) 最优化问题“消除restriction”的方法： 放宽限制 (min&#x2F;max-&gt;all) 发现generalize的问题的最优答案不变 generalize的问题更好解决(贪心，存在最优">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-14T17:48:17.000Z">
+<meta property="article:modified_time" content="2021-01-14T19:58:11.254Z">
+<meta property="article:author" content="Xingjian Bai">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="Algorithms">
+<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="Optimisation">
+<meta property="article:tag" content="PrefixStructure">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2021-01-14-Codeforces-ECR102.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Codeforces-ECR102 | Bai's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Bai's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Enthusiasm never fades.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">模型总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">2.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Task"><span class="nav-number">2.1.</span> <span class="nav-text">Task</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">3.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Task-1"><span class="nav-number">3.1.</span> <span class="nav-text">Task</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">4.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Task-2"><span class="nav-number">4.1.</span> <span class="nav-text">Task</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">4.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xingjian Bai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021-01-14-Codeforces-ECR102.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xingjian Bai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bai's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces-ECR102
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-01-14 17:48:17 / 修改时间：19:58:11" itemprop="dateCreated datePublished" datetime="2021-01-14T17:48:17+00:00">2021-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Competitions/" itemprop="url" rel="index"><span itemprop="name">Competitions</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Competitions/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ol>
+<li>(D) 对于Operation $+$, 若其满足 $\forall a, b, c, a + c = a + b + c - b$ (即存在逆元且满足交换律)，则可以考虑<strong>前缀和</strong>维护信息。</li>
+<li>(E) 最优化问题“消除restriction”的方法：<ol>
+<li>放宽限制 (min/max-&gt;all)</li>
+<li>发现generalize的问题的最优答案不变</li>
+<li>generalize的问题更好解决(贪心，存在最优子问题结构DP，etc.)</li>
+</ol>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1473/problem/C">here</a></p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ul>
+<li>先观察原数列逆序对的特点。发现，原数列可拆分为“直升”和“折叠”两部分；逆序对均在“折叠”处出现。</li>
+<li>进一步深入观察，折叠处的逆序对个数存在两个不变量：<ul>
+<li>对于非顶点的数，不管在什么位置，因为对称性，它和其他的每个数都会“反应”两次（i.e.对逆序对的贡献为2）。</li>
+<li>（这一点比较难发现）对于顶点的数，正好和所有的数反应一次（对逆序对的贡献为1）。</li>
+</ul>
+</li>
+<li>总结：折叠处的逆序对个数和permutation无关，永远不变；直升处不允许出现任何的逆序对。</li>
+<li>由此可以得出简洁的构造算法。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @author: Xingjian Bai </span></span><br><span class="line"><span class="comment">* @date: 2021-01-14 14:41:12</span></span><br><span class="line"><span class="comment">* @description: </span></span><br><span class="line"><span class="comment">* /Users/jackbai/Desktop/ER/c.cpp </span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @notes: </span></span><br><span class="line"><span class="comment">* g++ -fsanitize=address -ftrapv c.cpp</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TIME (double)clock()/CLOCKS_PER_SEC</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span> &lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>; </span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ld eps = <span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line">ll n, k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t --) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">		ll str = n - (n - k) * <span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">		ll fold = n - k + <span class="number">1</span>;</span><br><span class="line">		ll nat = (fold - <span class="number">1</span>) * fold;</span><br><span class="line">		ll num = nat - (fold - <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= str; i ++)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = fold; i &gt;= <span class="number">1</span>; i --)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; str + i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h3 id="Task-1"><a href="#Task-1" class="headerlink" title="Task"></a>Task</h3><p>变量$x$初始值为0，给定一个操作序列$a[1..n]$，每个操作为$x$++或者$x$—。$m$次询问，每次给定区间$[l, r]$，询问将操作序列$a[1..l-1]$++$a[r + 1, n]$应用在x时，过程中一共会出现多少个不同的值。</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><ul>
+<li>明显地，数值个数可以转化为区间的上下界。</li>
+<li>将答案拆成前后两部分考虑。对于前一部分，简单记录前缀和的最值即可。对于后一部分，考虑将操作“对于时间进行逆转”，将某个后缀和操作看成是对结果的逆向操作。这样看待问题不改变操作过程中的最值。所以对于后一部分，我们只要记录a的操作取反的后缀和即可。注意最后统计答案的时候，要将后缀和平移”sum $a[1..l-1]$++$a[r + 1, n]$“这么多。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @author: Xingjian Bai </span></span><br><span class="line"><span class="comment">* @date: 2021-01-14 15:04:08</span></span><br><span class="line"><span class="comment">* @description: </span></span><br><span class="line"><span class="comment">* /Users/jackbai/Desktop/ER/d.cpp </span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @notes: </span></span><br><span class="line"><span class="comment">* g++ -fsanitize=address -ftrapv d.cpp</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TIME (double)clock()/CLOCKS_PER_SEC</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span> &lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>; </span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ld eps = <span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> op[<span class="number">1000010</span>];</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">1000010</span>], mn[<span class="number">1000010</span>], mx[<span class="number">1000010</span>];</span><br><span class="line"><span class="keyword">int</span> s2[<span class="number">1000010</span>], mn2[<span class="number">1000010</span>], mx2[<span class="number">1000010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t --) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">		mn[<span class="number">0</span>] = mx[<span class="number">0</span>] = s[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;</span><br><span class="line">			<span class="keyword">char</span> c;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; c;</span><br><span class="line">			op[i] = (c == <span class="string">&#x27;+&#x27;</span> ? <span class="number">1</span> : <span class="number">-1</span>);</span><br><span class="line">			s[i] = s[i - <span class="number">1</span>] + op[i];</span><br><span class="line">			mn[i] = min (mn[i - <span class="number">1</span>], s[i]);</span><br><span class="line">			mx[i] = max (mx[i - <span class="number">1</span>], s[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		s2[n + <span class="number">1</span>] = mn2[n + <span class="number">1</span>] = mx2[n + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">			s2[i] = s2[i + <span class="number">1</span>] - op[i];</span><br><span class="line">			mn2[i] = min (mn2[i + <span class="number">1</span>], s2[i]);</span><br><span class="line">			mx2[i] = max (mx2[i + <span class="number">1</span>], s2[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> st, ed, i = <span class="number">1</span>; i &lt;= m; i ++) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; st &gt;&gt; ed;</span><br><span class="line">			<span class="keyword">int</span> lb = <span class="number">0</span>, ub = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">int</span> gap = s[n] + -(s[ed] - s[st - <span class="number">1</span>]);</span><br><span class="line">			lb = min (lb, mn[st - <span class="number">1</span>]);</span><br><span class="line">			ub = max (ub, mx[st - <span class="number">1</span>]);</span><br><span class="line">			lb = min (lb, mn2[ed + <span class="number">1</span>] + gap);</span><br><span class="line">			ub = max (ub, mx2[ed + <span class="number">1</span>] + gap);</span><br><span class="line">			<span class="comment">// cerr &lt;&lt; &quot; : &quot; &lt;&lt; mx2[ed + 1] &lt;&lt; &quot; &quot; &lt;&lt; gap &lt;&lt; &quot; &quot; &lt;&lt; ub &lt;&lt; endl;</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; (ub - lb + <span class="number">1</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><h3 id="Task-2"><a href="#Task-2" class="headerlink" title="Task"></a>Task</h3><p>都是套路·魔改最短路: </p>
+<script type="math/tex; mode=display">
+dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i=1}^{k}v_{e_i}</script><p>$nlogn$求单元最短路。</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><ul>
+<li>乍一看，普通的DP不满足子问题最优的特性；为了更好的维护max&amp;min，第一个想法是给边排序，没有问题。</li>
+<li>但是，“给边排序然后逐一加入”的算法有着天然的缺陷：<strong>基于增边的单元最短路算法复杂度本身就不对啊…</strong>更不用说，由于max和min的同时存在，就算可以按升序<strong>或者</strong>降序增边，我们也找不到满足<strong>子问题最优</strong>的设计状态的方案…</li>
+<li>发现，max&amp;min的限制可以消除！具体来说，我们先将问题generalize，将限制放宽：把max和min改成任意两条边。然后我们发现，<strong>将限制放宽并不会产生更优的解</strong>，所以两个问题的答案等价。</li>
+<li><strong>将限制放宽</strong>以后，我们就能设计出正确的DP了。用两个bool维进行辅助维护，做Dijkstra即可。</li>
+<li>这是套路！！！！回想一下<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1470/problem/A">CR694-A</a>, 同样是<strong>放宽限制-&gt;最优答案不变-&gt;generalized的问题更好解决</strong>。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @author: Xingjian Bai </span></span><br><span class="line"><span class="comment">* @date: 2021-01-14 15:16:42</span></span><br><span class="line"><span class="comment">* @description: </span></span><br><span class="line"><span class="comment">* /Users/jackbai/Desktop/ER/e.cpp </span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @notes: </span></span><br><span class="line"><span class="comment">* g++ -fsanitize=address -ftrapv e.cpp</span></span><br><span class="line"><span class="comment">*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TIME (double)clock()/CLOCKS_PER_SEC</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span> &lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>; </span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ld eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> ll oo = <span class="number">1e16</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> to, next;</span><br><span class="line">	ll val;</span><br><span class="line">&#125; edges[<span class="number">1000010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> point[<span class="number">500050</span>], te = <span class="number">1</span>;</span><br><span class="line">ll dis[<span class="number">500050</span>][<span class="number">2</span>][<span class="number">2</span>]; <span class="comment">//weither used the coupon</span></span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">500050</span>][<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, ll c)</span> </span>&#123;</span><br><span class="line">	edges[++ te].to = b;</span><br><span class="line">	edges[te].val = c;</span><br><span class="line">	edges[te].next = point[a];</span><br><span class="line">	point[a] = te;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span> &lt;<span class="keyword">int</span>, <span class="built_in">pair</span> &lt;<span class="keyword">bool</span>, <span class="keyword">bool</span>&gt; &gt; Ind;</span><br><span class="line"></span><br><span class="line"><span class="built_in">priority_queue</span> &lt;<span class="built_in">pair</span>&lt;ll, Ind&gt; &gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i ++) &#123;</span><br><span class="line">		ll x, y, z;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">		add (x, y, z);</span><br><span class="line">		add (y, x, z);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		dis[i][<span class="number">0</span>][<span class="number">0</span>] = dis[i][<span class="number">0</span>][<span class="number">1</span>] = dis[i][<span class="number">1</span>][<span class="number">0</span>] = dis[i][<span class="number">1</span>][<span class="number">1</span>] = oo;</span><br><span class="line">	dis[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	q.push(MP(<span class="number">0</span>, MP(<span class="number">1</span>, MP(<span class="number">0</span>, <span class="number">0</span>))));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">		<span class="built_in">pair</span> &lt;ll, Ind&gt; tp = q.top();</span><br><span class="line">		<span class="keyword">int</span> x = tp.S.F;</span><br><span class="line">		<span class="keyword">bool</span> i1 = tp.S.S.F, i2 = tp.S.S.S;</span><br><span class="line">		ll d = dis[x][i1][i2];</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">if</span> (vis[x][i1][i2])</span><br><span class="line">			<span class="keyword">continue</span> ;</span><br><span class="line">		<span class="comment">// cerr &lt;&lt; &quot; : &quot; &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; i1 &lt;&lt; &quot; &quot; &lt;&lt; i2 &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; endl;</span></span><br><span class="line">		vis[x][i1][i2] = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> e = point[x]; e; e = edges[e].next) &#123;</span><br><span class="line">			<span class="keyword">int</span> to = edges[e].to;</span><br><span class="line">			<span class="keyword">if</span> (d + edges[e].val &lt; dis[to][i1][i2]) &#123;</span><br><span class="line">				dis[to][i1][i2] = d + edges[e].val;</span><br><span class="line">				q.push(MP(-dis[to][i1][i2], MP(to, MP(i1, i2))));</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (i1 == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">if</span> (d + edges[e].val * <span class="number">2</span> &lt; dis[to][<span class="number">1</span>][i2]) &#123;</span><br><span class="line">					dis[to][<span class="number">1</span>][i2] = d + edges[e].val * <span class="number">2</span>;</span><br><span class="line">					q.push(MP(-dis[to][<span class="number">1</span>][i2], MP(to, MP(<span class="number">1</span>, i2))));</span><br><span class="line">				&#125;</span><br><span class="line">			<span class="keyword">if</span> (i2 == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">if</span> (d &lt; dis[to][i1][<span class="number">1</span>]) &#123;</span><br><span class="line">					dis[to][i1][<span class="number">1</span>] = d;</span><br><span class="line">					q.push(MP(-dis[to][i1][<span class="number">1</span>], MP(to, MP(i1, <span class="number">1</span>))));</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; min(dis[i][<span class="number">1</span>][<span class="number">1</span>], dis[i][<span class="number">0</span>][<span class="number">0</span>]) &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CS/" rel="tag"># CS</a>
+              <a href="/tags/Algorithms/" rel="tag"># Algorithms</a>
+              <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
+              <a href="/tags/Optimisation/" rel="tag"># Optimisation</a>
+              <a href="/tags/PrefixStructure/" rel="tag"># PrefixStructure</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020-12-30-%E5%9C%A8%E7%89%9B%E6%B4%A5%E7%9A%84%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F.html" rel="prev" title="在牛津的第一学期">
+                  <i class="fa fa-chevron-left"></i> 在牛津的第一学期
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingjian Bai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
