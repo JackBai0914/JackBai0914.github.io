@@ -190,7 +190,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -388,6 +388,109 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021-05-04-LibSeatGrabber.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xingjian Bai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bai's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021-05-04-LibSeatGrabber.html" class="post-title-link" itemprop="url">LibSeatGrabber -- WebDriver, TOTP, crontab初探</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-05-04 15:25:15 / 修改时间：16:03:23" itemprop="dateCreated datePublished" datetime="2021-05-04T15:25:15+01:00">2021-05-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <a id="more"></a>
+<p>花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做一个知识总结和问题记录</p>
+<h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="Selenium-Webdriver"><a href="#Selenium-Webdriver" class="headerlink" title="Selenium Webdriver"></a>Selenium Webdriver</h3><ul>
+<li><p>Selenium是最广泛使用的开源Web UI自动化测试套件之一，支持跨不同浏览器，平台和编程语言的自动化。</p>
+</li>
+<li><p>值得一提的是，Selenium借助Chrome作为媒介，读取HTML文件，并上传操作。它似乎并没有直接实现与服务器的交互，这导致它在自动化的过程中还是避不开Chrome的渲染等操作，有些浪费时间。</p>
+</li>
+</ul>
+<h3 id="Time-based-One-time-Password-algorithm"><a href="#Time-based-One-time-Password-algorithm" class="headerlink" title="Time-based One-time Password algorithm"></a>Time-based One-time Password algorithm</h3><ul>
+<li>Double Authentication使用的密码生成方法，一般需要用手机软件扫描网页，然后每次从实际上获取单次有效的密码。</li>
+<li>只要拿到了secret，用一个简单的哈希方法就可以模拟手机软件，生成对应的password…</li>
+<li>Microsoft把secret明文直接写在了QR code中。。。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pyauth/pyotp">A Python package </a>模拟TOTP Hashing algorithm:</li>
+</ul>
+<h3 id="Crontab"><a href="#Crontab" class="headerlink" title="Crontab"></a>Crontab</h3><ul>
+<li>一种轻量级的终端脚本，可以做到基于时间的任务管理。<ul>
+<li>crontab -e, -l</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://crontab.guru/">crontab语法辅助网页</a></li>
+<li>用crontab运行程序时，所在的地址位置比较奇怪，是在总根目录，而不是用户的根目录。</li>
+</ul>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><ul>
+<li>将chromedriver放进PATH总是失败</li>
+<li>增加程序的健壮性，没进行一步网页操作，多让程序sleep一些时间</li>
+<li>设计出有针对性的交互方式<ul>
+<li>dreamSeats.txt</li>
+<li>各种log都不能少</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -994,90 +1097,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020-10-06-C-IO.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-06-15-taichi-Mass-Spring-System.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xingjian Bai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bai's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020-06-15-taichi-Mass-Spring-System.html" class="post-title-link" itemprop="url">GAMES201 Homework 0.5:基于显式时间积分的弹簧质点系统物理引擎</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2020-06-15 22:40:16 / 修改时间：17:11:53" itemprop="dateCreated datePublished" datetime="2020-06-15T22:40:16+01:00">2020-06-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Graphics/" itemprop="url" rel="index"><span itemprop="name">Graphics</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Graphics/Taichi/" itemprop="url" rel="index"><span itemprop="name">Taichi</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我编写的第一个基于显式时间积分的物理引擎。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020-06-15-taichi-Mass-Spring-System.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

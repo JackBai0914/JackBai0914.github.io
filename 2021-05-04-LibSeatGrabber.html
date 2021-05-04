@@ -22,16 +22,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bai&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/Algorithms/Tree/Greedy/index.html">
+  <meta name="description" content="花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做一个知识总结和问题记录 知识总结Selenium Webdriver Selenium是最广泛使用的开源Web UI自动化测试套件之一，支持跨不同浏览器，平台和编程语言的自动化。  值得一提的是，Selenium借助Chrome作为媒介，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LibSeatGrabber -- WebDriver, TOTP, crontab初探">
+<meta property="og:url" content="http://yoursite.com/2021-05-04-LibSeatGrabber.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
+<meta property="og:description" content="花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做一个知识总结和问题记录 知识总结Selenium Webdriver Selenium是最广泛使用的开源Web UI自动化测试套件之一，支持跨不同浏览器，平台和编程语言的自动化。  值得一提的是，Selenium借助Chrome作为媒介，">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-04T14:25:15.000Z">
+<meta property="article:modified_time" content="2021-05-04T15:03:23.643Z">
 <meta property="article:author" content="Xingjian Bai">
+<meta property="article:tag" content="CS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/categories/Algorithms/Tree/Greedy/">
+<link rel="canonical" href="http://yoursite.com/2021-05-04-LibSeatGrabber.html">
 
 
 <script class="page-configurations">
@@ -39,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: Greedy | Bai's Blog</title>
+  <title>LibSeatGrabber -- WebDriver, TOTP, crontab初探 | Bai's Blog</title>
   
 
 
@@ -165,7 +170,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -177,6 +182,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Selenium-Webdriver"><span class="nav-number">1.1.</span> <span class="nav-text">Selenium Webdriver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-based-One-time-Password-algorithm"><span class="nav-number">1.2.</span> <span class="nav-text">Time-based One-time Password algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crontab"><span class="nav-number">1.3.</span> <span class="nav-text">Crontab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="nav-number">2.</span> <span class="nav-text">问题记录</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -230,53 +236,123 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Greedy
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021-05-04-LibSeatGrabber.html">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xingjian Bai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bai's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LibSeatGrabber -- WebDriver, TOTP, crontab初探
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2021-05-04 15:25:15 / 修改时间：16:03:23" itemprop="dateCreated datePublished" datetime="2021-05-04T15:25:15+01:00">2021-05-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <a id="more"></a>
+<p>花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做一个知识总结和问题记录</p>
+<h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="Selenium-Webdriver"><a href="#Selenium-Webdriver" class="headerlink" title="Selenium Webdriver"></a>Selenium Webdriver</h3><ul>
+<li><p>Selenium是最广泛使用的开源Web UI自动化测试套件之一，支持跨不同浏览器，平台和编程语言的自动化。</p>
+</li>
+<li><p>值得一提的是，Selenium借助Chrome作为媒介，读取HTML文件，并上传操作。它似乎并没有直接实现与服务器的交互，这导致它在自动化的过程中还是避不开Chrome的渲染等操作，有些浪费时间。</p>
+</li>
+</ul>
+<h3 id="Time-based-One-time-Password-algorithm"><a href="#Time-based-One-time-Password-algorithm" class="headerlink" title="Time-based One-time Password algorithm"></a>Time-based One-time Password algorithm</h3><ul>
+<li>Double Authentication使用的密码生成方法，一般需要用手机软件扫描网页，然后每次从实际上获取单次有效的密码。</li>
+<li>只要拿到了secret，用一个简单的哈希方法就可以模拟手机软件，生成对应的password…</li>
+<li>Microsoft把secret明文直接写在了QR code中。。。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pyauth/pyotp">A Python package </a>模拟TOTP Hashing algorithm:</li>
+</ul>
+<h3 id="Crontab"><a href="#Crontab" class="headerlink" title="Crontab"></a>Crontab</h3><ul>
+<li>一种轻量级的终端脚本，可以做到基于时间的任务管理。<ul>
+<li>crontab -e, -l</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://crontab.guru/">crontab语法辅助网页</a></li>
+<li>用crontab运行程序时，所在的地址位置比较奇怪，是在总根目录，而不是用户的根目录。</li>
+</ul>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><ul>
+<li>将chromedriver放进PATH总是失败</li>
+<li>增加程序的健壮性，没进行一步网页操作，多让程序sleep一些时间</li>
+<li>设计出有针对性的交互方式<ul>
+<li>dreamSeats.txt</li>
+<li>各种log都不能少</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-04-16T10:30:45+01:00"
-              content="2020-04-16">
-          04-16
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020-04-16-Codeforces-CR635-A.html" itemprop="url">
-            <span itemprop="name">CR635A解题报告</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CS/" rel="tag"># CS</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021-01-14-Codeforces-ECR102.html" rel="prev" title="Codeforces-ECR102">
+                  <i class="fa fa-chevron-left"></i> Codeforces-ECR102
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
