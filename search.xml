@@ -107,7 +107,7 @@
   </entry>
   <entry>
     <title>Dream to Red</title>
-    <url>/2020-04-12-Codeforces-Recording.html</url>
+    <url>/2020-04-13-Codeforces-Recording.html</url>
     <content><![CDATA[<p>CF上红不难，难的是在心中再次点燃火焰。开始吧。</p>
 <a id="more"></a>
 <p>Initial Rating: <strong>2161</strong></p>
@@ -142,10 +142,28 @@
       </tags>
   </entry>
   <entry>
+    <title>LostLove</title>
+    <url>/2021-07-07-LostLove.html</url>
+    <content><![CDATA[<p>写作是什么？是一次向内的观测与记录。你的心境从来不固定，只有观测才能抓住一瞬间的痛苦，困惑，和怀疑。所以，还是写一写吧。</p>
+<a id="more"></a>
+<p>分手是唯一的收敛解，你们有不可调和的矛盾。让我们先来数一数，她瞒过你几次吧。Surprisingly，lmh是第一次；最让你撕心裂肺的一次，当时的你怎么也想不通，你将满腔真心交付的人，为什么可以在表面应付着你，却将自己的真心交给一个混蛋。lby是第二次；你是在复合前几天知道的，是他主动告诉你的；你这才意识到，她对谈恋爱的理解是多么“特别”，她的感情竟然可以这么廉价。那个学弟（们？）应该算是第三次吧；是在树洞里，别人提问道：“你是不是喜欢那个学弟呀？”l每个朋友圈都点赞评论的人，真的没有出现在任何一个她给你讲的故事里。lst算是第四次吧；在两杯大都会鸡尾酒后，你这才听说，她和他是“毫无疑问最近的朋友”，是“游戏里最好的伙伴”，也是课上的搭档。她和你说过什么呢？没有，Null，zero，什么也没有。当佳彤说起他的样子简直“一辈子都不像能找到npy”的时候，你真不知道是该放松还是该苦笑。</p>
+<p>某种程度上，谈恋爱也像玩游戏，也有“几条命”。造成实质性伤害的事情只能发生有限次，然后命就没了，就连固执如你也能意识到，必须要分手了。其实啊，在第一次分手的时候，你们的“命”早就没了。她对恋爱感情的态度很显然；她本质上一直没有变。白行健啊，其实你慢慢见了更多的人，更应该明白大家三观的分布，以及你想要的是什么。你想要的是，对方也能对这段关系进行有效思考；想要对方也能对你产生积极的影响；想要家一样的感觉，依偎的感觉。而不是一个不愿意思考未来，不愿意付出以及接受你的付出，也不提供或汲取任何感情需求的人。</p>
+<p>我为什么会有不安全感？显然，我能想象到，你不和我说的这些事情，你许久不和我分享的这些情绪，都去了哪里。这些事情是产生感情的燃料，也是每个人的情感刚需。我一直有准备，愿意全心全意的去听你讲，去给你安慰和建议；但是，显然地，你把这些燃料用于了其他的感情。这也是为什么我会说，我了解到的你，不是真正的你。而当我想要和你输出感情的时候，你会觉得奇怪，觉得我为什么这么“情绪化”。</p>
+<p>对你的感情也极大的影响了我的精神力量，这也是极其糟糕的标志。正如高中的竞赛经历一直是我积极心态的源泉，和你的感情总是在消耗着我的精神力。并非怪罪于你；这完全归咎于我的心态，但你的行为是我心态的原因。和你解决问题的无力感不断消磨着我的决心；对你的爱恋和烦恼，由于与我的梦想完全脱钩甚至背道而驰，一直分散着我的精力；对你的不信任，你对我的隐瞒，也极其负面的改变了我交友的方式。可以很明确的说，和你在一起，我真的，没有，成为一个更好的人……</p>
+<p>还有什么想说的呢？理性给了我清晰的答案。在如此重要的问题上，我不想让感性掺手。或者说，现在的你，给我的感情波动，已经在可控范围之内了。我已经不像三年前一样傻了，不是吗？</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>FirstLove</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LibSeatGrabber -- WebDriver, TOTP, crontab初探</title>
     <url>/2021-05-04-LibSeatGrabber.html</url>
-    <content><![CDATA[<a id="more"></a>
-<p>花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做一个知识总结和问题记录</p>
+    <content><![CDATA[<p>花了不到十个小时的时间，实现了一个自动抢图书馆座位的程序，探索了自动化访问网络的工具，基于时间的一次性密码算法，以及mac电脑中控制程序周期运行的API。下面做知识总结和问题记录。</p>
+<a id="more"></a>
 <h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="Selenium-Webdriver"><a href="#Selenium-Webdriver" class="headerlink" title="Selenium Webdriver"></a>Selenium Webdriver</h3><ul>
 <li><p>Selenium是最广泛使用的开源Web UI自动化测试套件之一，支持跨不同浏览器，平台和编程语言的自动化。</p>
 </li>
@@ -185,7 +203,7 @@
   </entry>
   <entry>
     <title>Codeforces-ECR102</title>
-    <url>/2021-01-14-Codeforces-ECR102.html</url>
+    <url>/2021-01-15-Codeforces-ECR102.html</url>
     <content><![CDATA[<h2 id="模型总结"><a href="#模型总结" class="headerlink" title="模型总结"></a>模型总结</h2><ol>
 <li>(D) 对于Operation $+$, 若其满足 $\forall a, b, c, a + c = a + b + c - b$ (即存在逆元且满足交换律)，则可以考虑<strong>前缀和</strong>维护信息。</li>
 <li>(E) 最优化问题“消除restriction”的方法：<ol>
@@ -303,7 +321,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>Teach_Yourself_Physics</title>
-    <url>/2020-12-07-Teach-Yourself-Physics.html</url>
+    <url>/2020-12-08-Teach-Yourself-Physics.html</url>
     <content><![CDATA[<a id="more"></a>
 <h3 id="Citations"><a href="#Citations" class="headerlink" title="Citations"></a>Citations</h3><blockquote>
 <p>Study hard what interest you the most in the most undisciplined, irreverent and original manner possible — Richard Feynman</p>
@@ -426,7 +444,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>Codeforces Grand Round 11 比赛总结</title>
-    <url>/2020-10-10-Codeforces-CGR11.html</url>
+    <url>/2020-10-11-Codeforces-CGR11.html</url>
     <content><![CDATA[<p>粗心是最大的问题。<strong>Special Case没想清；long long的计算写成了int</strong>。</p>
 <p>与其闷头写乱搞，不如整理思路，<strong>定位并替换掉乱搞的部分</strong>。</p>
 <a id="more"></a>
@@ -485,7 +503,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>Scanf&amp;Printf用法梳理</title>
-    <url>/2020-10-06-C-IO.html</url>
+    <url>/2020-10-07-C-IO.html</url>
     <content><![CDATA[<p>从此以后，改用C语言的输入输出以提高效率。</p>
 <a id="more"></a>
 <p><code>%[flags][width][.precision][length]specifier</code>‘</p>
@@ -706,7 +724,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>GAMES201 Homework 0.5:基于显式时间积分的弹簧质点系统物理引擎</title>
-    <url>/2020-06-15-taichi-Mass-Spring-System.html</url>
+    <url>/2020-06-16-taichi-Mass-Spring-System.html</url>
     <content><![CDATA[<p>我编写的第一个基于显式时间积分的物理引擎。</p>
 <a id="more"></a>
 <h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>弹簧质点系统 (Mass-Spring System, MSS)之所以基础，是因为它的<strong>力学模型</strong>较为简单。实现了力学模型以后，MSS就成为了<strong>时间积分器</strong>的练手任务。</p>
@@ -778,7 +796,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>GAMES201 Homework0</title>
-    <url>/2020-06-04-taichi-gui.html</url>
+    <url>/2020-06-05-taichi-gui.html</url>
     <content><![CDATA[<p>来记录一下你用太极编写的第一个程序吧！</p>
 <a id="more"></a>
 <h3 id="成品展示："><a href="#成品展示：" class="headerlink" title="成品展示："></a>成品展示：</h3><p><img src="https://simulated-anneal.oss-cn-beijing.aliyuncs.com/out2.gif" alt="这里应该有图片"></p>
@@ -814,7 +832,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>ByteCamp_day3_L</title>
-    <url>/2020-05-03-ByteCamp-day3-L.html</url>
+    <url>/2020-05-04-ByteCamp-day3-L.html</url>
     <content><![CDATA[<p>在贫瘠的草原上，寻找花的种子。</p>
 <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>定义biggest_digit(A)为A在10进制下最大的一个位的值。</p>
 <p>求A在经过n次 $A:=biggest_digit(A)%m$ 运算之后的值。</p>
@@ -836,7 +854,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>ByteCamp_day3_G</title>
-    <url>/2020-05-03-ByteCamp-day3-G.html</url>
+    <url>/2020-05-04-ByteCamp-day3-G.html</url>
     <content><![CDATA[<p>穿越晨雾。</p>
 <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定A，不断复制自身得到无限串T。</p>
 <p>给定字符串集S。求至少用其中的多少个串，才能拼成B，使得B不断复制自身后得到T。</p>
@@ -860,7 +878,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>ByteCamp_day3_A</title>
-    <url>/2020-05-03-ByteCamp-day3-A.html</url>
+    <url>/2020-05-04-ByteCamp-day3-A.html</url>
     <content><![CDATA[<p>在迷雾中前行。</p>
 <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>Given n (1 &lt;= n &lt;= 1000), k (0 &lt;= k &lt;= $\frac{n*(n-1)}{2}$),  x (2 &lt;= x &lt;= 1000). Construct an n-element array, satisfying:</p>
 <ol>
@@ -887,7 +905,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>Certificate Verification</title>
-    <url>/2020-04-28-decoder.html</url>
+    <url>/2020-04-29-decoder.html</url>
     <content><![CDATA[<p>Every cerfificate offered by the SDSZ Mathematics Office has an unique code that satisfies certain cryptographical patterns. <a id="more"></a> If you want to check whether or not your certificate is legitimate, download the program below and type in the code.</p>
 <h4 id="Instruction-for-running-decoder-on-Mac"><a href="#Instruction-for-running-decoder-on-Mac" class="headerlink" title="Instruction for running decoder on Mac:"></a>Instruction for running decoder on Mac:</h4><p><a href="https://simulated-anneal.oss-cn-beijing.aliyuncs.com/decoder_Mac">Decoder_Mac</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0.Download the program.</span><br><span class="line">1.Open the terminal (google if confused).</span><br><span class="line">2.Go to the &quot;Downloads&quot; folder by typing in command &quot;cd Downloads&quot;.</span><br><span class="line">3.Give computer the permission to run decoder by typing in command &quot;chmod +x decoder_Mac&quot;.</span><br><span class="line">4.Run the decoder program by typing in command &quot;.&#x2F;decoder_Mac&quot;.</span><br></pre></td></tr></table></figure>
@@ -900,7 +918,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>CR633C</title>
-    <url>/2020-04-23-Codeforces-CR633-C.html</url>
+    <url>/2020-04-24-Codeforces-CR633-C.html</url>
     <content><![CDATA[<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>Consider the infinite sequence $s$ of positive integers, created by repeating the following steps:</p>
 <ol>
 <li>Find the lexicographically smallest triple of positive integers (a,b,c) such that: <ul>
@@ -1015,7 +1033,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>CR635D解题报告</title>
-    <url>/2020-04-18-Codeforces-CR635-D.html</url>
+    <url>/2020-04-19-Codeforces-CR635-D.html</url>
     <content><![CDATA[<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>有$n$种标号为1到n的小球，每种有0-n个，初识个数未知。每次操作，输入标号i，交互库会增加一个标号为i的小球，并返回三元对<strong>triplet = [x, x, x]</strong>与<strong>straight = [x - 1, x, x + 1]</strong>的个数。请在n次操作内，求出每种小球的初始个数。</p>
 <a id="more"></a>
 <h3 id="算法定位"><a href="#算法定位" class="headerlink" title="算法定位"></a>算法定位</h3><ul>
@@ -1325,7 +1343,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>哥伦比亚大学 访校印象</title>
-    <url>/2019-08-25-Columbia-University.html</url>
+    <url>/2019-08-26-Columbia-University.html</url>
     <content><![CDATA[<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>感觉上，哥大是一个精致，古典与现代结合的学校。地理位置优越，生活便利；工科教授的水平一流，学生水平，工程资源一般；需要主动利用资源。</p>
 <p>总体感觉挺好的。也有朋友和父母熟人在旁边。只是在最繁华的市中心度过4年，不知道是否能保持学术的初心？</p>
 <a id="more"></a>
@@ -1421,7 +1439,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>Markdown使用攻略</title>
-    <url>/2019-07-28-Markdown%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5.html</url>
+    <url>/2019-07-29-Markdown%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5.html</url>
     <content><![CDATA[<h2 id="前置技能：Markdown"><a href="#前置技能：Markdown" class="headerlink" title="前置技能：Markdown"></a>前置技能：Markdown</h2><h3 id="一、Markdown-是什么"><a href="#一、Markdown-是什么" class="headerlink" title="一、Markdown 是什么"></a>一、Markdown 是什么</h3><p>Markdown 是一种标记语言。在写作时，你的所有文字都是没有样式的纯文本，在其中插入若干 Markdown 标记后，被标记的文字便有了样式。样式将会在渲染的时候呈现，并且样式的显示效果由 Markdown 工具决定。</p>
 <p>比如，在你所写的文字中，你希望某一行的最终排版呈现一级标题的样式，那就给这行文字加个一级标题的标记；某个地方有两个字需要加粗，那就给这两个字加个粗体标记，最终的排版效果中这两字就会是粗体模样。</p>
 <a id="more"></a>
@@ -1480,7 +1498,7 @@ dist(e_1, e_2, ..., e_k) = \sum_{i=1}^kv_{e_i} - \max_{i=1}^{k}v_{e_i} + \min_{i
   </entry>
   <entry>
     <title>function testing</title>
-    <url>/2019-07-27-function-testing.html</url>
+    <url>/2019-07-28-function-testing.html</url>
     <content><![CDATA[<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">  <span class="built_in">string</span> s;</span><br><span class="line">  s = <span class="string">&quot;Hello World！&quot;</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>

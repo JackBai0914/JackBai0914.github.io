@@ -22,26 +22,25 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="收获： 绝对值函数：用分类讨论进行转化 BITSET！！！">
+  <meta name="description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codechef October Challenge">
-<meta property="og:url" content="http://yoursite.com/2020-10-15-CodeChef-OctoberChallenge2020.html">
+<meta property="og:title" content="Codeforces Grand Round 11 比赛总结">
+<meta property="og:url" content="http://yoursite.com/2020-10-11-Codeforces-CGR11.html">
 <meta property="og:site_name" content="Bai&#39;s Blog">
-<meta property="og:description" content="收获： 绝对值函数：用分类讨论进行转化 BITSET！！！">
+<meta property="og:description" content="粗心是最大的问题。Special Case没想清；long long的计算写成了int。 与其闷头写乱搞，不如整理思路，定位并替换掉乱搞的部分。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-14T23:33:24.000Z">
-<meta property="article:modified_time" content="2020-10-15T00:11:16.234Z">
+<meta property="article:published_time" content="2020-10-10T22:29:33.000Z">
+<meta property="article:modified_time" content="2020-10-10T23:11:49.134Z">
 <meta property="article:author" content="Xingjian Bai">
 <meta property="article:tag" content="CS">
 <meta property="article:tag" content="Algorithms">
-<meta property="article:tag" content="Codechef">
-<meta property="article:tag" content="Bitset">
 <meta property="article:tag" content="Construction">
-<meta property="article:tag" content="MST">
+<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/2020-10-15-CodeChef-OctoberChallenge2020.html">
+<link rel="canonical" href="http://yoursite.com/2020-10-11-Codeforces-CGR11.html">
 
 
 <script class="page-configurations">
@@ -54,7 +53,7 @@
   };
 </script>
 
-  <title>Codechef October Challenge | Bai's Blog</title>
+  <title>Codeforces Grand Round 11 比赛总结 | Bai's Blog</title>
   
 
 
@@ -187,7 +186,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E8%8E%B7%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">收获：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POSAND"><span class="nav-number">2.</span> <span class="nav-text">POSAND</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ADDSQURE"><span class="nav-number">3.</span> <span class="nav-text">ADDSQURE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDIMMST"><span class="nav-number">4.</span> <span class="nav-text">DDIMMST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E9%A2%98%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83"><span class="nav-number">4.2.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E8%AE%AD%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">教训：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">3.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E9%A2%98%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E9%A2%98%E6%96%B9%E6%B3%95-1"><span class="nav-number">4.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83"><span class="nav-number">4.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">5.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E9%A2%98%E6%96%B9%E6%B3%95-2"><span class="nav-number">5.1.</span> <span class="nav-text">破题方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-1"><span class="nav-number">5.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">6.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E9%A2%98%E6%96%B9%E6%B3%95-3"><span class="nav-number">6.1.</span> <span class="nav-text">破题方法</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -250,7 +249,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-10-15-CodeChef-OctoberChallenge2020.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020-10-11-Codeforces-CGR11.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -266,7 +265,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Codechef October Challenge
+          Codeforces Grand Round 11 比赛总结
         </h1>
 
         <div class="post-meta-container">
@@ -278,7 +277,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2020-10-15 07:33:24 / 修改时间：08:11:16" itemprop="dateCreated datePublished" datetime="2020-10-15T07:33:24+08:00">2020-10-15</time>
+      <time title="创建时间：2020-10-11 06:29:33 / 修改时间：07:11:49" itemprop="dateCreated datePublished" datetime="2020-10-11T06:29:33+08:00">2020-10-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,7 +289,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Competitions/Codechef/" itemprop="url" rel="index"><span itemprop="name">Codechef</span></a>
+          <a href="/categories/Competitions/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
         </span>
     </span>
 
@@ -304,26 +303,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="收获："><a href="#收获：" class="headerlink" title="收获："></a>收获：</h2><ul>
-<li>绝对值函数：用分类讨论进行转化</li>
-<li>BITSET！！！</li>
-</ul>
+        <p>粗心是最大的问题。<strong>Special Case没想清；long long的计算写成了int</strong>。</p>
+<p>与其闷头写乱搞，不如整理思路，<strong>定位并替换掉乱搞的部分</strong>。</p>
 <a id="more"></a>
-<h2 id="POSAND"><a href="#POSAND" class="headerlink" title="POSAND"></a><a target="_blank" rel="noopener" href="https://www.codechef.com/OCT20B/problems/POSAND">POSAND</a></h2><p>构造题的经典思路：</p>
-<ul>
-<li>小case特殊讨论</li>
-<li>大case用增量法构造</li>
+<h2 id="教训："><a href="#教训：" class="headerlink" title="教训："></a>教训：</h2><ul>
+<li>(B) 贪心/动态规划的时候，一定要<strong>提前想清楚</strong>边界情况。</li>
+<li>(E) 随机化算法不轻易用。不如想清楚<strong>随机化的部分能否转为确定性的</strong>。</li>
+<li>(A) 对于简单的题目，写程序以前，想好程序的结构&amp;分类讨论。</li>
 </ul>
-<h2 id="ADDSQURE"><a href="#ADDSQURE" class="headerlink" title="ADDSQURE"></a><a target="_blank" rel="noopener" href="https://www.codechef.com/OCT20B/problems/ADDSQURE"><strong>ADDSQURE</strong></a></h2><p><strong>Bitset！！！</strong></p>
-<p>二进制操作，速度*64/*32。</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/RabbitHu/p/bitset.html">Bitset教程</a></p>
-<h2 id="DDIMMST"><a href="#DDIMMST" class="headerlink" title="DDIMMST"></a><a target="_blank" rel="noopener" href="https://www.codechef.com/OCT20B/problems/DDIMMST"><strong>DDIMMST</strong></a></h2><h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
-<li>定义了边权函数的题目：一定要利用边权的性质，简化选边的过程。</li>
-<li>将边权函数中的绝对值转化成分类讨论，最大边一定在某些候选边内。</li>
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1427/problem/B">B</a></h2><h3 id="破题方法"><a href="#破题方法" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
+<li><p>发现1/2/3的区别。确定贪心的正确性。</p>
+</li>
+<li><p>思考贪心的细节。如，哪些情况只能是1，有哪些Special cases：</p>
+<ol>
+<li>没有W<ol>
+<li>只有1场</li>
+<li>> 1场</li>
+</ol>
+</li>
+<li>前后的L</li>
+</ol>
+</li>
+</ol>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1427/problem/C">C</a></h2><h3 id="破题方法-1"><a href="#破题方法-1" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
+<li>发现<strong>特殊的限制</strong>：r小，t不等。由此，发现<strong>特殊的性质</strong>：任意两个间隔&gt;1000的讲座，一定可以到达。</li>
+<li>想出暴力DP。</li>
+<li>发现性质对DP的优化。</li>
 </ol>
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><ul>
-<li>最小生成树有三种方法：Prim，Kruskal，Boruvka。<strong>选择可以应用性质的那一个。</strong></li>
+<li><strong>经典DP问题，特殊条件限制优化</strong></li>
 </ul>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1427/problem/D">D</a></h2><h3 id="破题方法-2"><a href="#破题方法-2" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
+<li>思考“有序”的形成方法。可以是“$\forall i \in [1, n]$, 第i个位置是i”，也可以是“$\forall i \in [1, n$), i下一个位置是i+i”。思考本题的操作发现，每个位置上的数字（绝对位置）很难维护。但是数字的相对位置很好维护。</li>
+<li>所以，每一次操作增加一对“相邻数”。</li>
+</ol>
+<h3 id="思考-1"><a href="#思考-1" class="headerlink" title="思考"></a>思考</h3><ul>
+<li>对<strong>“用特定操作O构造特定结构S”</strong>的题目的普适思考：寻找S的等价命题/等价构造方法，在其中找出与O性质相似的一个，用O构造。</li>
+</ul>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1427/problem/E">E</a></h2><h3 id="破题方法-3"><a href="#破题方法-3" class="headerlink" title="破题方法"></a>破题方法</h3><ol>
+<li>对操作进行整理：加法实现乘法；异或是最后一步。</li>
+<li>加法，异或，1。想到了什么？<strong>裴蜀定理</strong>。寻找x, y, 使得gcd(x, y)==1.</li>
+<li>最简单的思路是随机y。但是，<strong>为何不思考一下，给定x，能否确定性的构造出$y$ $s.t. gcd(x, y)==1$</strong></li>
+<li>假设x的最高二进制位为k。y = $x$ ^ $(x<em>2^k)$ = $(2^k+1)</em>x-2^k*2$，一定和x互质。</li>
+</ol>
 
     </div>
 
@@ -335,23 +357,22 @@
           <div class="post-tags">
               <a href="/tags/CS/" rel="tag"># CS</a>
               <a href="/tags/Algorithms/" rel="tag"># Algorithms</a>
-              <a href="/tags/Codechef/" rel="tag"># Codechef</a>
-              <a href="/tags/Bitset/" rel="tag"># Bitset</a>
               <a href="/tags/Construction/" rel="tag"># Construction</a>
-              <a href="/tags/MST/" rel="tag"># MST</a>
+              <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
+              <a href="/tags/Greedy/" rel="tag"># Greedy</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020-10-11-Codeforces-CGR11.html" rel="prev" title="Codeforces Grand Round 11 比赛总结">
-                  <i class="fa fa-chevron-left"></i> Codeforces Grand Round 11 比赛总结
+                <a href="/2020-10-07-C-IO.html" rel="prev" title="Scanf&Printf用法梳理">
+                  <i class="fa fa-chevron-left"></i> Scanf&Printf用法梳理
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020-11-09-Codeforces-CR679.html" rel="next" title="Codeforces Round 679 比赛总结">
-                  Codeforces Round 679 比赛总结 <i class="fa fa-chevron-right"></i>
+                <a href="/2020-10-15-CodeChef-OctoberChallenge2020.html" rel="next" title="Codechef October Challenge">
+                  Codechef October Challenge <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
